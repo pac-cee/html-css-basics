@@ -17,3 +17,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $age = filter_var($_POST['age'], FILTER_VALIDATE_INT);
 
         // Validate age
+        if ($age === false || $age < 0) {
+            die('Error: Invalid age value');
+        }
+
+        // Prepare the SQL statement
+        $sql = "INSERT INTO Persons (FirstName, LastName, Age) VALUES (?, ?, ?)";
+
+        // Create a prepared statement
+        $stmt = mysqli_prepare($con, $sql);
+
+        if ($stmt) {
+            // Bind parameters
+            mysqli_stmt_bind_param($stmt, "ssi", $firstname, $lastname, $age);
+
+            // Execute the statement
+            if (mysqli_stmt_execute($stmt)) {
+                echo "1 record added successfully";
+                // Redirect back to form
+                header("Location: lesson6.html");
