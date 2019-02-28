@@ -36,3 +36,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "1 record added successfully";
                 // Redirect back to form
                 header("Location: lesson6.html");
+                exit();
+            } else {
+                die('Error: ' . mysqli_stmt_error($stmt));
+            }
+
+            // Close statement
+            mysqli_stmt_close($stmt);
+        } else {
+            die('Error: ' . mysqli_error($con));
+        }
+    } else {
+        die('Error: All fields are required');
+    }
+
+    // Close connection only after POST processing
+    mysqli_close($con);
+}
+// Don't close connection here - it might be needed by other files
+?>
+
