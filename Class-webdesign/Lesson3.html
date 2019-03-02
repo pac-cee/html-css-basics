@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Second class of CSS</title>
+        <link rel="stylesheet"  type="text/css" href="style3.css">
+        <script type="text/javascript">
+            var name = prompt("Enter your name to continue");
+            if (name == null || name == "") {
+                alert("You must enter your name to continue");
+                window.location = "lesson3.html";
+            }
+            document.addEventListener("DOMContentLoaded", function() {
+                alert("Welcome, " + name + "!");
+            })
+            if (name=="pacifique"){
+                var n1= 30;
+                var n2=10;
+                var prod=n1*n2;
+                document.write("Welcome, " + name + "! Your product is: " + prod);
