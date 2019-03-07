@@ -17,3 +17,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
+function getValues() {
+    return {
+        activities: Number(classActivities.value) || 0,
+        midterm: Number(midTerm.value) || 0,
+        final: Number(finalExam.value) || 0
+    };
+}
+
+function calculateTotal() {
+    try {
+        const values = getValues();
+        const total = values.activities + values.midterm + values.final;
+        
+        document.getElementById('totalResult').value = total;
+        alert(`Total marks: ${total}`);
+        return total;
+    } catch (error) {
+        alert('Error calculating total. Please check your inputs.');
