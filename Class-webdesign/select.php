@@ -55,3 +55,22 @@ try {
           </tr>";
     
     // Fetch and display each record
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($row['FirstName']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['LastName']) . "</td>";
+        echo "<td>" . htmlspecialchars($row['Age']) . "</td>";
+        echo "</tr>";
+    }
+    
+    echo "</table>";
+    
+    // Add a back button
+    echo "<button class='back-btn' onclick='window.location.href=\"lesson6.html\"'>Back to Form</button>";
+    echo "</div>";
+
+    // Free result set
+    mysqli_free_result($result);
+    
+    // Close connection after we're done with it
+    mysqli_close($con);
