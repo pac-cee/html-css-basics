@@ -74,3 +74,12 @@ try {
     
     // Close connection after we're done with it
     mysqli_close($con);
+
+} catch(Exception $e) {
+    // Close connection on error
+    if (isset($con)) {
+        mysqli_close($con);
+    }
+    die("Query failed: " . $e->getMessage());
+}
+?>
