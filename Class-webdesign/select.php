@@ -17,3 +17,22 @@ try {
             width: 80%;
             margin: 20px auto;
         }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f8f8;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .back-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
