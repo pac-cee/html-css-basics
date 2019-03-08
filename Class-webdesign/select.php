@@ -36,3 +36,22 @@ try {
         .back-btn {
             padding: 10px 20px;
             background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>";
+
+    // Start table HTML
+    echo "<div class='container'>";
+    echo "<h2>Registered Persons</h2>";
+    echo "<table>";
+    echo "<tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+          </tr>";
+    
+    // Fetch and display each record
