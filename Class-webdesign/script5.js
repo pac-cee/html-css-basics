@@ -36,3 +36,20 @@ function calculateTotal() {
         return total;
     } catch (error) {
         alert('Error calculating total. Please check your inputs.');
+        console.error('Calculation error:', error);
+        return 0;
+    }
+}
+
+function calculateAverage() {
+    try {
+        const total = calculateTotal();
+        const average = total / 3;
+        
+        document.getElementById('averageResult').value = average.toFixed(2);
+        alert(`Average marks: ${average.toFixed(2)}`);
+    } catch (error) {
+        alert('Error calculating average. Please check your inputs.');
+        console.error('Calculation error:', error);
+    }
+}
