@@ -17,3 +17,14 @@
 }
 a:link{
     background-color: orange;
+    
+}
+a:active{
+    background-color:black;
+    color:red;
+    
+}
+a:visited{
+    background-color: yellow;
+    
+}
