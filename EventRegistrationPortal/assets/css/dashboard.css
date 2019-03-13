@@ -1,0 +1,19 @@
+/* Dashboard-specific styles for Eventify */
+body {
+  background: var(--bg, #f4f4f4);
+  font-family: 'Poppins', Arial, sans-serif;
+}
+nav {
+  background: linear-gradient(90deg, #6cb8ff 0%, #2d3a6e 100%);
+  color: #fff;
+  padding: 1.1em 2em;
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  box-shadow: 0 8px 32px rgba(79,140,255,0.14);
+  border-radius: 12px 12px 0 0;
+  margin-bottom: 2em;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background 0.4s, box-shadow 0.4s;
