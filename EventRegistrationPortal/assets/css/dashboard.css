@@ -17,3 +17,22 @@ nav {
   top: 0;
   z-index: 100;
   transition: background 0.4s, box-shadow 0.4s;
+  overflow-x: auto;
+} 
+nav a {
+  color: #232946;
+  background: #f4f4f4;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.7em 1.6em;
+  border-radius: 10px;
+  font-size: 1.13em;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  box-shadow: 0 2px 8px #4f8cff18;
+  margin: 0 0.18em;
+  position: relative;
+  border: none;
+  outline: none;
