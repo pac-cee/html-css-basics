@@ -131,3 +131,10 @@ canvas, #eventMap {
     margin-bottom: 1.2em;
   }
   nav a {
+    font-size: 1em;
+    padding: 0.7em 1em;
+    width: 100%;
+    justify-content: center;
+    margin: 0.1em 0;
+  }
+}
