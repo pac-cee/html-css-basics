@@ -55,3 +55,22 @@ nav a.active i, nav a[aria-current="page"] i {
   color: #232946;
 }
 nav a:hover, nav a:focus {
+  background: #d7eafe;
+  color: #232946;
+  box-shadow: 0 6px 24px #4f8cff22;
+  transform: translateY(-2px) scale(1.06);
+}
+nav a:hover i, nav a:focus i {
+  color: #232946;
+}
+
+nav a.active, nav a:focus, nav a:hover {
+  background: linear-gradient(90deg, #eebbc3 0%, #4f8cff 100%);
+  color: var(--secondary, #232946);
+  box-shadow: 0 6px 20px #4f8cff33;
+  transform: translateY(-3px) scale(1.06);
+  outline: none;
+}
+nav a.active::after, nav a:focus::after, nav a:hover::after {
+  content: '';
+  display: block;
