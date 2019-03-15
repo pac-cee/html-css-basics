@@ -74,3 +74,22 @@ nav a.active, nav a:focus, nav a:hover {
 nav a.active::after, nav a:focus::after, nav a:hover::after {
   content: '';
   display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4f8cff 0%, #eebbc3 100%);
+  border-radius: 0 0 8px 8px;
+  animation: tab-underline 0.4s cubic-bezier(.65,.05,.36,1) forwards;
+}
+@keyframes tab-underline {
+  from { width: 0; opacity: 0; }
+  to { width: 100%; opacity: 1; }
+}
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(79,140,255,0.09);
+  padding: 2em 2em 3em 2em;
+}
