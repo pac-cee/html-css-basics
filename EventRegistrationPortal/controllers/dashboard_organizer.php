@@ -112,3 +112,22 @@ nav[aria-label] a {
 nav[aria-label] a.active, nav[aria-label] a[aria-current="page"] {
   background: var(--dashboard-nav-btn-active);
   color: #fff;
+  box-shadow: 0 4px 18px #4f8cff22;
+  position: relative;
+}
+nav[aria-label] a:hover {
+  filter: brightness(1.07);
+  background: var(--primary);
+  color: #fff;
+}
+main section {
+  background: var(--dashboard-card);
+  border-radius: 18px;
+  box-shadow: var(--dashboard-shadow);
+  padding: 2em 1.5em;
+  margin: 2em auto 0 auto;
+  max-width: 800px;
+  transition: background 0.3s, color 0.3s;
+}
+h2 {
+  color: var(--primary);
