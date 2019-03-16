@@ -36,3 +36,19 @@ function logout() {
 if (isset($_GET['logout'])) {
     logout();
 }
+
+
+function require_role($role) {
+    if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== $role) {
+        header('Location: /index.php');
+        exit();
+    }
+}
+
+function is_logged_in() {
+    return isset($_SESSION['user_id']);
+}
+
+function get_user_role() {
+    return $_SESSION['user_role'] ?? null;
+}
