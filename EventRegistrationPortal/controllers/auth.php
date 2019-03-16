@@ -17,3 +17,22 @@ function login($email, $password) {
         if (password_verify($password, $hash)) {
             $_SESSION['user_id'] = $id;
             $_SESSION['user_name'] = $name;
+            $_SESSION['user_email'] = $email;
+            $_SESSION['user_role'] = $role;
+            return true;
+        }
+    }
+    return false;
+}
+
+function logout() {
+    session_unset();
+    session_destroy();
+    header('Location: ../index.php');
+    exit();
+}
+
+// Handle logout via GET
+if (isset($_GET['logout'])) {
+    logout();
+}
