@@ -55,3 +55,15 @@
       saveTheme(selected);
       applyTheme();
       themeMenu.classList.remove('show');
+      e.stopPropagation();
+    });
+  });
+
+  // Listen for system theme change
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+    if (getSavedTheme() === 'system') applyTheme();
+  });
+
+  // Init
+  applyTheme();
+})();
