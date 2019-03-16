@@ -36,3 +36,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="view_events.php"><i class="fas fa-calendar-alt"></i> View Events</a>
         <a href="register.php"><i class="fas fa-user-edit"></i> Register</a>
     </nav>
+    <main>
+        <h1>Create Event</h1>
+        <?php if(isset($msg)) {
+            $icon = strpos($msg, 'success') !== false ? '<i class=\'fas fa-check-circle\' style=\'color:var(--primary);margin-right:0.5em;\'></i>' : '<i class=\'fas fa-exclamation-circle\' style=\'color:var(--accent);margin-right:0.5em;\'></i>';
+            echo "<p style='font-weight:600;'>$icon$msg</p>";
+        } ?>
+        <form method="post">
+            <label>Title:<input type="text" name="title" required></label><br>
+            <label>Date:<input type="date" name="date" required></label><br>
+            <label>Location:<input type="text" name="location" required></label><br>
+            <button type="submit">Create Event</button>
+        </form>
+    </main>
+</body>
+</html>
