@@ -1,0 +1,19 @@
+// Theme toggle logic for dashboard (light, dark, system)
+(function() {
+  const THEME_KEY = 'eventify_theme';
+  const themeToggleBtn = document.getElementById('theme-toggle-btn');
+  const themeMenu = document.getElementById('theme-menu');
+  const themeOptions = document.querySelectorAll('.theme-option');
+
+  // Detect system theme
+  function getSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  // Set theme on <html>
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+
+  // Persist theme
+  function saveTheme(theme) {
