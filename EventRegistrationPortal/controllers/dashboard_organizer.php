@@ -150,3 +150,9 @@ h2 {
   background: #e0e7ff55;
   color: var(--primary)!important;
 }
+[data-theme="dark"] #theme-menu .theme-option:hover {
+  background: #23294644;
+}
+</style>
+</body>
+</html>
