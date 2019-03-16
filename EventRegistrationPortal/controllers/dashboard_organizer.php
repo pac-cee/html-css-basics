@@ -74,3 +74,22 @@ document.addEventListener('click', () => { menu.style.display = 'none'; });
   --dashboard-text: #f1f5fa;
   --dashboard-header-bg: rgba(35,41,70,0.22);
   --dashboard-shadow: 0 8px 32px #23294633;
+}
+body {
+  background: var(--dashboard-bg);
+  color: var(--dashboard-text);
+  transition: background 0.3s, color 0.3s;
+}
+.dashboard-header {
+  background: var(--dashboard-header-bg)!important;
+  color: var(--dashboard-text)!important;
+  box-shadow: var(--dashboard-shadow)!important;
+}
+nav[aria-label] {
+  background: var(--dashboard-nav)!important;
+  border-radius: 12px;
+  padding: 0.8em 1em;
+  margin: 0 0 2.2em 0;
+  display: flex;
+  gap: 1em;
+  align-items: center;
