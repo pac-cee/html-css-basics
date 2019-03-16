@@ -36,3 +36,22 @@ require_role(ROLE_ORGANIZER);
 </nav>
 <main>
 
+    <section>
+        <h2>Upcoming Events</h2>
+        <div id="organizerEvents"></div>
+    </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>
+<script src="../assets/js/organizer_dashboard.js"></script>
+<script src="../assets/js/theme_toggle.js"></script>
+<script>
+// Show/hide theme menu
+const btn = document.getElementById('theme-toggle-btn');
+const menu = document.getElementById('theme-menu');
+btn.addEventListener('click', e => { menu.style.display = menu.style.display === 'block' ? 'none' : 'block'; e.stopPropagation(); });
+document.addEventListener('click', () => { menu.style.display = 'none'; });
+</script>
+<style>
+:root {
+  --primary: #4f8cff;
