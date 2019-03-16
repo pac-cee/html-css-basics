@@ -93,3 +93,22 @@ nav[aria-label] {
   display: flex;
   gap: 1em;
   align-items: center;
+  box-shadow: 0 4px 20px #4f8cff0d;
+}
+nav[aria-label] a {
+  background: var(--dashboard-nav-btn);
+  color: var(--dashboard-text);
+  border-radius: 8px;
+  padding: 0.7em 1.5em;
+  font-weight: 600;
+  font-size: 1.08em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: 0 2px 10px #4f8cff11;
+}
+nav[aria-label] a.active, nav[aria-label] a[aria-current="page"] {
+  background: var(--dashboard-nav-btn-active);
+  color: #fff;
