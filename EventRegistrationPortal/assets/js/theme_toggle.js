@@ -36,3 +36,22 @@
     // Highlight selected option
     themeOptions.forEach(opt => {
       opt.classList.toggle('active', opt.dataset.theme === theme);
+    });
+  }
+
+  // Toggle menu
+  themeToggleBtn.addEventListener('click', function(e) {
+    themeMenu.classList.toggle('show');
+    e.stopPropagation();
+  });
+  document.addEventListener('click', function() {
+    themeMenu.classList.remove('show');
+  });
+
+  // Select theme
+  themeOptions.forEach(opt => {
+    opt.addEventListener('click', function(e) {
+      const selected = this.dataset.theme;
+      saveTheme(selected);
+      applyTheme();
+      themeMenu.classList.remove('show');
