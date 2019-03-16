@@ -131,3 +131,22 @@ main section {
 }
 h2 {
   color: var(--primary);
+  margin-bottom: 1.1em;
+}
+.theme-option.active {
+  background: #e0e7ff;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--primary)!important;
+}
+[data-theme="dark"] .theme-option.active {
+  background: #23294622;
+}
+#theme-menu {
+  min-width: 140px;
+  z-index: 1000;
+}
+#theme-menu .theme-option:hover {
+  background: #e0e7ff55;
+  color: var(--primary)!important;
+}
