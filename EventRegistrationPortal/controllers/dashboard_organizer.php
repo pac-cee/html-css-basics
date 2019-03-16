@@ -55,3 +55,22 @@ document.addEventListener('click', () => { menu.style.display = 'none'; });
 <style>
 :root {
   --primary: #4f8cff;
+  --dashboard-bg: #f4f8ff;
+  --dashboard-card: #fff;
+  --dashboard-nav: linear-gradient(90deg,#4f8cff 0%,#263159 100%);
+  --dashboard-nav-btn: #fff;
+  --dashboard-nav-btn-active: linear-gradient(90deg,#fbbf24 0%,#4f8cff 100%);
+  --dashboard-text: #232946;
+  --dashboard-header-bg: rgba(255,255,255,0.18);
+  --dashboard-shadow: 0 8px 32px #4f8cff22;
+}
+[data-theme="dark"] {
+  --primary: #60aaff;
+  --dashboard-bg: #181f2a;
+  --dashboard-card: #232946;
+  --dashboard-nav: linear-gradient(90deg,#263159 0%,#232946 100%);
+  --dashboard-nav-btn: #232946;
+  --dashboard-nav-btn-active: linear-gradient(90deg,#6366f1 0%,#60aaff 100%);
+  --dashboard-text: #f1f5fa;
+  --dashboard-header-bg: rgba(35,41,70,0.22);
+  --dashboard-shadow: 0 8px 32px #23294633;
