@@ -17,3 +17,22 @@
 
   // Persist theme
   function saveTheme(theme) {
+    localStorage.setItem(THEME_KEY, theme);
+  }
+
+  // Get saved or system theme
+  function getSavedTheme() {
+    return localStorage.getItem(THEME_KEY) || 'system';
+  }
+
+  // Apply theme
+  function applyTheme() {
+    const theme = getSavedTheme();
+    if (theme === 'system') {
+      setTheme(getSystemTheme());
+    } else {
+      setTheme(theme);
+    }
+    // Highlight selected option
+    themeOptions.forEach(opt => {
+      opt.classList.toggle('active', opt.dataset.theme === theme);
