@@ -17,3 +17,14 @@ require_once __DIR__ . '/config/db.php';
     <style>body{background:#f4f4f4;}</style>
     <title>Eventify - Event Management</title>
 </head>
+<body>
+    <main style="max-width:500px;margin:4em auto;background:#fff;border-radius:18px;box-shadow:0 6px 32px #4f8cff22;padding:2em;text-align:center;">
+        <h1 style="color:var(--primary);">Welcome to Eventify</h1>
+        <p style="font-size:1.1em;">A modern event management platform for admins, organizers, and attendees.<br>Manage, discover, and register for events with ease.</p>
+        <div style="margin:2em 0;display:flex;justify-content:center;gap:2em;">
+            <a href="views/login.php" style="background:var(--primary);color:#fff;padding:0.8em 2em;border-radius:8px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px #4f8cff22;transition:background 0.3s;">Login <i class="fas fa-sign-in-alt"></i></a>
+            <a href="views/register.php" style="background:var(--accent);color:var(--secondary);padding:0.8em 2em;border-radius:8px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px #eebbc322;transition:background 0.3s;">Register <i class="fas fa-user-plus"></i></a>
+        </div>
+    </main>
+</body>
+</html>
