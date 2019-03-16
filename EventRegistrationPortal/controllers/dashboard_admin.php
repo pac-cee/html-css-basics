@@ -17,3 +17,24 @@ require_role(ROLE_ADMIN);
     <h1 style="color:var(--primary,#4f8cff);font-size:2.3em;margin-bottom:0.3em;">Admin Dashboard</h1>
     <p style="color:#232946b3;font-size:1.07em;">Welcome, <span style="font-weight:600;">Admin</span>. Manage users, approve events, and view analytics below.</p>
 </header>
+<nav aria-label="Admin dashboard navigation">
+    <a href="dashboard_admin.php" class="active" aria-current="page"><i class="fas fa-chart-pie"></i> <span class="visually-hidden">Current: </span>Dashboard</a>
+    <a href="manage_users.php"><i class="fas fa-users-cog"></i> Manage Users</a>
+    <a href="approve_events.php"><i class="fas fa-check-circle"></i> Approve Events</a>
+    <a href="../controllers/auth.php?logout=1"><i class="fas fa-sign-out-alt"></i> Logout</a>
+</nav>
+<main>
+
+    <section>
+        <canvas id="analyticsChart" width="600" height="300"></canvas>
+    </section>
+    <section>
+        <h2>Recent Events & Users</h2>
+        <!-- Table for quick stats -->
+        <div id="quickStats"></div>
+    </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../assets/js/admin_dashboard.js"></script>
+</body>
+</html>
