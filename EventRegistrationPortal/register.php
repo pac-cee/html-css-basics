@@ -36,3 +36,22 @@ $events = $conn->query("SELECT * FROM events");
     <nav>
         <a href="index.php"><i class="fas fa-house"></i> Home</a>
         <a href="create_event.php"><i class="fas fa-plus-circle"></i> Create Event</a>
+        <a href="view_events.php"><i class="fas fa-calendar-alt"></i> View Events</a>
+        <a href="register.php"><i class="fas fa-user-edit"></i> Register</a>
+    </nav>
+    <main>
+        <h1>Register for Event</h1>
+        <?php if(isset($msg)) {
+            $icon = strpos($msg, 'success') !== false ? '<i class=\'fas fa-check-circle\' style=\'color:var(--primary);margin-right:0.5em;\'></i>' : '<i class=\'fas fa-exclamation-circle\' style=\'color:var(--accent);margin-right:0.5em;\'></i>';
+            echo "<p style='font-weight:600;'>$icon$msg</p>";
+        } ?>
+        <form method="post">
+            <label>Event:
+                <select name="event_id" required>
+                    <option value="">Select Event</option>
+                    <?php while($row = $events->fetch_assoc()): ?>
+                    <option value="<?= $row['id'] ?>"><?= htmlspecialchars($row['title']) ?> (<?= htmlspecialchars($row['date']) ?>)</option>
+                    <?php endwhile; ?>
+                </select>
+            </label><br>
+            <label>Name:<input type="text" name="name" required></label><br>
