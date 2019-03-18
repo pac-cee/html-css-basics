@@ -17,3 +17,22 @@ CREATE TABLE events (
     image VARCHAR(255),
     location VARCHAR(255),
     date DATETIME NOT NULL,
+    seats_total INT NOT NULL,
+    seats_available INT NOT NULL,
+    status ENUM('pending','approved','rejected','active','archived') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (organizer_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE registrations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    event_id INT NOT NULL,
+    attendee_id INT NOT NULL,
+    registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ticket_pdf_path VARCHAR(255),
+    FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE CASCADE,
+    FOREIGN KEY (attendee_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE tickets (
+    id INT AUTO_INCREMENT PRIMARY KEY,
