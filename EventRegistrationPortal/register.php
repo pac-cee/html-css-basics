@@ -55,3 +55,9 @@ $events = $conn->query("SELECT * FROM events");
                 </select>
             </label><br>
             <label>Name:<input type="text" name="name" required></label><br>
+            <label>Email:<input type="email" name="email" required></label><br>
+            <button type="submit">Register</button>
+        </form>
+    </main>
+</body>
+</html>
