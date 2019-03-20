@@ -112,3 +112,22 @@ button[type="submit"]:hover {
   transform: scale(1.04);
 }
 table {
+  background: var(--card-bg);
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 2em;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px #4f8cff13;
+  animation: fadeInUp 0.8s;
+}
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: 0.9em 1em;
+  text-align: left;
+}
+th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+}
