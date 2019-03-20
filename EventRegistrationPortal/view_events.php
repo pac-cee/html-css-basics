@@ -17,3 +17,26 @@ $result = $conn->query("SELECT * FROM events");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <nav>
+        <a href="index.php"><i class="fas fa-house"></i> Home</a>
+        <a href="create_event.php"><i class="fas fa-plus-circle"></i> Create Event</a>
+        <a href="view_events.php"><i class="fas fa-calendar-alt"></i> View Events</a>
+        <a href="register.php"><i class="fas fa-user-edit"></i> Register</a>
+    </nav>
+    <main>
+        <h1>All Events</h1>
+        <table border="1">
+            <tr><th><i class='fas fa-hashtag'></i> ID</th><th><i class='fas fa-heading'></i> Title</th><th><i class='fas fa-calendar-day'></i> Date</th><th><i class='fas fa-map-marker-alt'></i> Location</th></tr>
+            <?php while($row = $result->fetch_assoc()): ?>
+            <tr>
+                <td><?= htmlspecialchars($row['id']) ?></td>
+                <td><?= htmlspecialchars($row['title']) ?></td>
+                <td><?= htmlspecialchars($row['date']) ?></td>
+                <td><?= htmlspecialchars($row['location']) ?></td>
+            </tr>
+            <?php endwhile; ?>
+        </table>
+    </main>
+</body>
+</html>
