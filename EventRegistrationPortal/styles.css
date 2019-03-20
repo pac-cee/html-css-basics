@@ -131,3 +131,22 @@ th {
   color: #fff;
   font-weight: 700;
 }
+tr:nth-child(even) td {
+  background: #f6faff;
+}
+tr:hover td {
+  background: #eebbc320;
+  transition: background 0.3s;
+}
+@media (max-width: 800px) {
+  main {
+    max-width: 98vw;
+    padding: 1em 0.2em;
+  }
+  nav {
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+  }
+  table, th, td {
+    font-size: 0.96em;
