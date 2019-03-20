@@ -93,3 +93,22 @@ input:focus, select:focus {
   box-shadow: 0 0 0 2px #4f8cff33;
   outline: none;
 }
+button[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.9em 2em;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #4f8cff22;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 0.3em;
+}
+button[type="submit"]:hover {
+  background: var(--accent);
+  color: var(--secondary);
+  transform: scale(1.04);
+}
+table {
