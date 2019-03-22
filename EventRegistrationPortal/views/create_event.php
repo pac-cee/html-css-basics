@@ -131,3 +131,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: #888;
             pointer-events: none;
             transition: 0.2s;
+            background: transparent;
+        }
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label,
+        .form-group textarea:focus + label,
+        .form-group textarea:not(:placeholder-shown) + label {
+            top: -0.85em;
+            left: 1.2em;
+            font-size: 0.92em;
+            color: var(--primary);
+            background: var(--dashboard-card);
+            padding: 0 0.3em;
+            border-radius: 6px;
+        }
+        .form-group .input-icon {
+            position: absolute;
+            left: 0.9em;
+            top: 1.15em;
+            color: var(--primary);
