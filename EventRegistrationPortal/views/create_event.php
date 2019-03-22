@@ -150,3 +150,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             left: 0.9em;
             top: 1.15em;
             color: var(--primary);
+            font-size: 1.13em;
+            pointer-events: none;
+            opacity: 0.85;
+        }
+        .form-group input[type="file"] {
+            padding: 1.1em 1em;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.93);
+            color: var(--dashboard-text);
+            border: 1.5px solid #d1d5db;
+            font-size: 1.05em;
+        }
+        [data-theme="dark"] .form-group input[type="file"] {
+            background: #232946;
+            color: #f1f5fa;
+            border-color: #334155;
+        }
+        .create-event-card button[type="submit"] {
+            background: linear-gradient(90deg, #4f8cff 0%, #6cb8ff 100%);
