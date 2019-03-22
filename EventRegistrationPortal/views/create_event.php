@@ -55,3 +55,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         [data-theme="dark"] {
             --primary: #60aaff;
             --dashboard-bg: #181f2a;
+            --dashboard-card: #232946;
+            --dashboard-text: #f1f5fa;
+            --dashboard-shadow: 0 8px 32px #23294633;
+        }
+        body {
+            background: var(--dashboard-bg);
+            color: var(--dashboard-text);
+            transition: background 0.3s, color 0.3s;
+        }
+        .create-event-card {
+            max-width: 520px;
+            margin: 3.5em auto;
+            background: var(--dashboard-card);
+            border-radius: 22px;
+            box-shadow: var(--dashboard-shadow);
+            padding: 2.5em 2em 2em 2em;
+            position: relative;
+            backdrop-filter: blur(12px) saturate(160%);
+            animation: fadeInUp 0.7s cubic-bezier(.65,.05,.36,1);
