@@ -17,3 +17,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (move_uploaded_file($image['tmp_name'], $img_path)) {
             $db = new Database();
             $conn = $db->getConnection();
+            $stmt = $conn->prepare("INSERT INTO events (organizer_id, title, description, image, location, date, seats_total, seats_available, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'pending')");
+            $stmt->bind_param("isssssii", $org_id, $title, $desc, $img_name, $location, $date, $seats, $seats);
+            if ($stmt->execute()) {
+                $msg = "<span style='color:green'><i class='fas fa-check-circle'></i> Event created! Awaiting admin approval.</span>";
+            } else {
+                $msg = "<span style='color:red'><i class='fas fa-exclamation-circle'></i> Error: " . htmlspecialchars($stmt->error) . "</span>";
+            }
+            $stmt->close();
+        } else {
+            $msg = "<span style='color:red'><i class='fas fa-exclamation-circle'></i> Image upload failed.</span>";
+        }
+    } else {
+        $msg = "<span style='color:red'><i class='fas fa-exclamation-circle'></i> Please fill all fields and upload an image.</span>";
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
