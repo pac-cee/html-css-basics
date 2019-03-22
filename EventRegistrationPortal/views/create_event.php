@@ -74,3 +74,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             position: relative;
             backdrop-filter: blur(12px) saturate(160%);
             animation: fadeInUp 0.7s cubic-bezier(.65,.05,.36,1);
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(60px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .create-event-card h1 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2.1em;
+            font-weight: 700;
+            margin-bottom: 1.5em;
+            letter-spacing: 1px;
+        }
+        .create-event-card form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25em;
+        }
+        .form-group {
