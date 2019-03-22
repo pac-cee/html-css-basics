@@ -112,3 +112,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             box-shadow: 0 2px 8px #4f8cff0a;
             resize: none;
         }
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group textarea {
+            background: #232946;
+            color: #f1f5fa;
+            border-color: #334155;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border: 1.5px solid var(--primary);
+            box-shadow: 0 4px 16px #4f8cff18;
+        }
+        .form-group label {
+            position: absolute;
+            left: 2.7em;
+            top: 1.13em;
+            font-size: 1em;
+            color: #888;
+            pointer-events: none;
+            transition: 0.2s;
