@@ -93,3 +93,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             gap: 1.25em;
         }
         .form-group {
+            position: relative;
+            margin-bottom: 0.2em;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="date"],
+        .form-group input[type="number"],
+        .form-group textarea {
+            width: 100%;
+            padding: 1.1em 1em 1.1em 2.7em;
+            border: 1.5px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 1.08em;
+            background: rgba(255,255,255,0.93);
+            color: var(--dashboard-text);
+            outline: none;
+            transition: border 0.22s, box-shadow 0.22s;
+            box-shadow: 0 2px 8px #4f8cff0a;
+            resize: none;
+        }
