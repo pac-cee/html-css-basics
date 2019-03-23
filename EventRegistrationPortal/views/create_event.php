@@ -169,3 +169,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         .create-event-card button[type="submit"] {
             background: linear-gradient(90deg, #4f8cff 0%, #6cb8ff 100%);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.13em;
+            padding: 1em 0;
+            border: none;
+            border-radius: 10px;
+            margin-top: 0.5em;
+            box-shadow: 0 2px 16px #4f8cff22;
+            cursor: pointer;
+            transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+        }
+        .create-event-card button[type="submit"]:hover, .create-event-card button[type="submit"]:focus {
+            background: linear-gradient(90deg, #6cb8ff 0%, #4f8cff 100%);
+            box-shadow: 0 6px 32px #4f8cff33;
+            transform: translateY(-2px) scale(1.03);
+        }
+        @media (max-width: 600px) {
+            .create-event-card {
+                padding: 1.2em 0.4em 1.3em 0.4em;
