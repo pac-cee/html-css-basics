@@ -188,3 +188,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         @media (max-width: 600px) {
             .create-event-card {
                 padding: 1.2em 0.4em 1.3em 0.4em;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="create-event-card">
+        <h1>Create Event</h1>
+        <?php if (!empty($msg)) echo '<div style="margin-bottom:1em">'.$msg.'</div>'; ?>
+        <form method="post" enctype="multipart/form-data" autocomplete="off">
+            <div class="form-group">
+                <span class="input-icon"><i class="fas fa-heading"></i></span>
+                <input type="text" name="title" id="title" required placeholder=" ">
+                <label for="title">Title</label>
+            </div>
+            <div class="form-group">
+                <span class="input-icon"><i class="fas fa-calendar"></i></span>
+                <input type="date" name="date" id="date" required placeholder=" ">
+                <label for="date">Date</label>
