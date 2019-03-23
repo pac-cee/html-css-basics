@@ -207,3 +207,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <span class="input-icon"><i class="fas fa-calendar"></i></span>
                 <input type="date" name="date" id="date" required placeholder=" ">
                 <label for="date">Date</label>
+            </div>
+            <div class="form-group">
+                <span class="input-icon"><i class="fas fa-location-dot"></i></span>
+                <input type="text" name="location" id="location" required placeholder=" ">
+                <label for="location">Location</label>
+            </div>
+            <div class="form-group">
+                <span class="input-icon"><i class="fas fa-chair"></i></span>
+                <input type="number" name="seats" id="seats" min="1" required placeholder=" ">
+                <label for="seats">Total Seats</label>
+            </div>
+            <div class="form-group">
+                <span class="input-icon"><i class="fas fa-image"></i></span>
+                <input type="file" name="image" id="image" accept="image/*">
+                <label for="image">Event Image</label>
+            </div>
+            <div class="form-group">
+                <span class="input-icon"><i class="fas fa-align-left"></i></span>
+                <textarea name="description" id="description" rows="4" required placeholder=" "></textarea>
