@@ -226,3 +226,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-group">
                 <span class="input-icon"><i class="fas fa-align-left"></i></span>
                 <textarea name="description" id="description" rows="4" required placeholder=" "></textarea>
+                <label for="description">Description</label>
+            </div>
+            <button type="submit">Create Event</button>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>
+    <script>
+      flatpickr('#dateInput', {enableTime:true, dateFormat:'Y-m-d H:i'});
+      var quill = new Quill('#quillEditor', {theme:'snow'});
+      function syncDesc() {
+        document.getElementById('descInput').value = quill.root.innerHTML;
+      }
+      function previewImg(e) {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function(ev) {
+            document.getElementById('imgPreview').innerHTML = `<img src='${ev.target.result}' style='max-width:180px;border-radius:8px;box-shadow:0 2px 8px #4f8cff22;'>`;
