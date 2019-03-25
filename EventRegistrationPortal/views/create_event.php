@@ -245,3 +245,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           const reader = new FileReader();
           reader.onload = function(ev) {
             document.getElementById('imgPreview').innerHTML = `<img src='${ev.target.result}' style='max-width:180px;border-radius:8px;box-shadow:0 2px 8px #4f8cff22;'>`;
+          };
+          reader.readAsDataURL(file);
+        }
+      }
+    </script>
+</body>
+</html>
