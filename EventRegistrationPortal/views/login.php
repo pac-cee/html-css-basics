@@ -36,3 +36,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <style>
 body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f4f8ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-glass {
+  max-width: 420px;
+  margin: 3.5em auto;
+  background: rgba(255,255,255,0.75);
+  border-radius: 22px;
+  box-shadow: 0 8px 40px #4f8cff22, 0 1.5px 8px #eebbc322;
+  padding: 2.5em 2em 2em 2em;
+  position: relative;
+  backdrop-filter: blur(12px) saturate(160%);
+  animation: fadeInUp 0.7s cubic-bezier(.65,.05,.36,1);
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(60px); }
