@@ -169,3 +169,15 @@ body {
             <label for="email">Email</label>
         </div>
         <div class="form-group">
+            <span class="input-icon"><i class="fas fa-lock"></i></span>
+            <input type="password" name="password" id="password" required placeholder=" " autocomplete="current-password">
+            <label for="password">Password</label>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <div class="login-footer">
+        Don’t have an account? <a href="register.php">Register</a>
+    </div>
+</main>
+</body>
+</html>
