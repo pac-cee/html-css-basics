@@ -112,3 +112,22 @@ body {
 }
 .form-group .input-icon {
   position: absolute;
+  left: 0.9em;
+  top: 1.15em;
+  color: #4f8cff;
+  font-size: 1.13em;
+  pointer-events: none;
+  opacity: 0.85;
+}
+.login-glass button[type="submit"] {
+  background: linear-gradient(90deg, #4f8cff 0%, #6cb8ff 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.13em;
+  padding: 1em 0;
+  border: none;
+  border-radius: 10px;
+  margin-top: 0.5em;
+  box-shadow: 0 2px 16px #4f8cff22;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
