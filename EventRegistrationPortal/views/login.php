@@ -55,3 +55,22 @@ body {
 }
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.login-glass h1 {
+  text-align: center;
+  color: #4f8cff;
+  font-size: 2.2em;
+  font-weight: 700;
+  margin-bottom: 1.5em;
+  letter-spacing: 1px;
+}
+.login-glass form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+}
+.form-group {
+  position: relative;
+  margin-bottom: 0.2em;
+}
