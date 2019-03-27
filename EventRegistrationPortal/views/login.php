@@ -150,3 +150,22 @@ body {
   transition: color 0.18s;
 }
 .login-glass .login-footer a:hover {
+  color: #4f8cff;
+}
+@media (max-width: 600px) {
+  .login-glass {
+    padding: 1.2em 0.4em 1.3em 0.4em;
+    max-width: 98vw;
+  }
+}
+</style>
+<main class="login-glass">
+    <h1>Login</h1>
+    <?php if (!empty($msg)) echo '<div style="margin-bottom:1em">'.$msg.'</div>'; ?>
+    <form method="post" autocomplete="off">
+        <div class="form-group">
+            <span class="input-icon"><i class="fas fa-envelope"></i></span>
+            <input type="email" name="email" id="email" required placeholder=" " autocomplete="username">
+            <label for="email">Email</label>
+        </div>
+        <div class="form-group">
