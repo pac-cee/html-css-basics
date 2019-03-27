@@ -93,3 +93,22 @@ body {
 .form-group label {
   position: absolute;
   left: 2.7em;
+  top: 1.13em;
+  font-size: 1em;
+  color: #888;
+  pointer-events: none;
+  transition: 0.2s;
+  background: transparent;
+}
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  top: -0.85em;
+  left: 1.2em;
+  font-size: 0.92em;
+  color: #4f8cff;
+  background: #fff;
+  padding: 0 0.3em;
+  border-radius: 6px;
+}
+.form-group .input-icon {
+  position: absolute;
