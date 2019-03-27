@@ -17,3 +17,10 @@ require_once __DIR__ . '/../config/db.php';
 <body>
     <main style="max-width:900px;margin:2em auto;background:#fff;border-radius:18px;box-shadow:0 6px 32px #4f8cff22;padding:2em;">
         <h1 style="text-align:center;color:var(--primary)">Manage My Events</h1>
+        <div id="myEvents">
+            <!-- Event management table/list will go here -->
+            <p style="text-align:center;color:#888;">Event management features coming soon.</p>
+        </div>
+    </main>
+</body>
+</html>
