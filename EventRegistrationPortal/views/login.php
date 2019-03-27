@@ -131,3 +131,22 @@ body {
   box-shadow: 0 2px 16px #4f8cff22;
   cursor: pointer;
   transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+.login-glass button[type="submit"]:hover, .login-glass button[type="submit"]:focus {
+  background: linear-gradient(90deg, #6cb8ff 0%, #4f8cff 100%);
+  box-shadow: 0 6px 32px #4f8cff33;
+  transform: translateY(-2px) scale(1.03);
+}
+.login-glass .login-footer {
+  margin-top: 1.7em;
+  text-align: center;
+  font-size: 1.04em;
+  color: #232946b0;
+}
+.login-glass .login-footer a {
+  color: #7c3aed;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.18s;
+}
+.login-glass .login-footer a:hover {
