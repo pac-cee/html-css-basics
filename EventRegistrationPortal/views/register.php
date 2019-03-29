@@ -131,3 +131,22 @@ body {
   background-position: right 1em center;
   background-size: 1.2em;
 }
+.register-glass button[type="submit"] {
+  background: linear-gradient(90deg, #4f8cff 0%, #6cb8ff 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.13em;
+  padding: 1em 0;
+  border: none;
+  border-radius: 10px;
+  margin-top: 0.5em;
+  box-shadow: 0 2px 16px #4f8cff22;
+  cursor: pointer;
+  transition: background 0.18s, box-shadow 0.18s, transform 0.18s;
+}
+.register-glass button[type="submit"]:hover, .register-glass button[type="submit"]:focus {
+  background: linear-gradient(90deg, #6cb8ff 0%, #4f8cff 100%);
+  box-shadow: 0 6px 32px #4f8cff33;
+  transform: translateY(-2px) scale(1.03);
+}
+.register-glass .register-footer {
