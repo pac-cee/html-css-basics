@@ -74,3 +74,22 @@ body {
   position: relative;
   margin-bottom: 0.2em;
 }
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 1.1em 1em 1.1em 2.7em;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1.08em;
+  background: rgba(255,255,255,0.93);
+  color: #232946;
+  outline: none;
+  transition: border 0.22s, box-shadow 0.22s;
+  box-shadow: 0 2px 8px #4f8cff0a;
+}
+.form-group input:focus, .form-group select:focus {
+  border: 1.5px solid #4f8cff;
+  box-shadow: 0 4px 16px #4f8cff18;
+}
+.form-group label {
+  position: absolute;
+  left: 2.7em;
