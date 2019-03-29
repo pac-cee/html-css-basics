@@ -150,3 +150,22 @@ body {
   transform: translateY(-2px) scale(1.03);
 }
 .register-glass .register-footer {
+  margin-top: 1.7em;
+  text-align: center;
+  font-size: 1.04em;
+  color: #232946b0;
+}
+.register-glass .register-footer a {
+  color: #7c3aed;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.18s;
+}
+.register-glass .register-footer a:hover {
+  color: #4f8cff;
+}
+@media (max-width: 600px) {
+  .register-glass {
+    padding: 1.2em 0.4em 1.3em 0.4em;
+    max-width: 98vw;
+  }
