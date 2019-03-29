@@ -112,3 +112,22 @@ body {
   padding: 0 0.3em;
   border-radius: 6px;
 }
+.form-group .input-icon {
+  position: absolute;
+  left: 0.9em;
+  top: 1.15em;
+  color: #4f8cff;
+  font-size: 1.13em;
+  pointer-events: none;
+  opacity: 0.85;
+}
+.form-group select {
+  padding-left: 2.7em;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%234f8cff" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1em center;
+  background-size: 1.2em;
+}
