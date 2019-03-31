@@ -188,3 +188,22 @@ body {
         <div class="form-group">
             <span class="input-icon"><i class="fas fa-lock"></i></span>
             <input type="password" name="password" id="password" required placeholder=" ">
+            <label for="password">Password</label>
+        </div>
+        <div class="form-group">
+            <span class="input-icon"><i class="fas fa-user-tag"></i></span>
+            <select name="role" id="role" required>
+                <option value="" disabled selected hidden>Select Role</option>
+                <option value="organizer">Organizer</option>
+                <option value="attendee">Attendee</option>
+            </select>
+            <label for="role">Role</label>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    <div class="register-footer">
+        Already have an account? <a href="login.php">Login</a>
+    </div>
+</main>
+</body>
+</html>
