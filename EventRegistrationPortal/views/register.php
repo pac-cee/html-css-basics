@@ -169,3 +169,22 @@ body {
     padding: 1.2em 0.4em 1.3em 0.4em;
     max-width: 98vw;
   }
+}
+</style>
+<main class="register-glass">
+    <h1>Register</h1>
+    <?php if (!empty($msg)) echo '<div style="margin-bottom:1em">'.$msg.'</div>'; ?>
+    <form method="post" autocomplete="off">
+        <div class="form-group">
+            <span class="input-icon"><i class="fas fa-user"></i></span>
+            <input type="text" name="name" id="name" required placeholder=" ">
+            <label for="name">Name</label>
+        </div>
+        <div class="form-group">
+            <span class="input-icon"><i class="fas fa-envelope"></i></span>
+            <input type="email" name="email" id="email" required placeholder=" ">
+            <label for="email">Email</label>
+        </div>
+        <div class="form-group">
+            <span class="input-icon"><i class="fas fa-lock"></i></span>
+            <input type="password" name="password" id="password" required placeholder=" ">
