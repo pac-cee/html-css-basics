@@ -17,3 +17,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function calculateSum() {
     // Get the input values
+    let num1 = document.getElementById('num1').value;
+    let num2 = document.getElementById('num2').value;
+
+    // Validate inputs
+    if (!num1 || !num2) {
+        alert('Please enter both numbers!');
+        return;
+    }
+
+    // Convert string inputs to numbers
+    num1 = Number(num1);
+    num2 = Number(num2);
+
+    // Check if conversion was successful
+    if (isNaN(num1) || isNaN(num2)) {
+        alert('Please enter valid numbers!');
+        return;
+    }
+
