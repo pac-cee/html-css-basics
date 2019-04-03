@@ -36,3 +36,22 @@ function calculateSum() {
         return;
     }
 
+    try {
+        // Calculate sum
+        let sum = num1 + num2;
+        
+        // Display result
+        const resultInput = document.getElementById('result');
+        resultInput.value = sum;
+
+        // Show success message
+        alert(`Calculation successful! Sum is: ${sum}`);
+
+    } catch (error) {
+        console.error('Calculation error:', error);
+        alert('An error occurred during calculation.');
+    }
+}
+
+// Reset function
+function resetFields() {
