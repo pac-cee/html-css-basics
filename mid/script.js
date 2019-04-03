@@ -55,3 +55,17 @@ function calculateSum() {
 
 // Reset function
 function resetFields() {
+    document.getElementById('num1').value = '';
+    document.getElementById('num2').value = '';
+    document.getElementById('result').value = '';
+}
+
+// Add reset button to HTML
+document.addEventListener('DOMContentLoaded', function() {
+    const cell13 = document.querySelector('.cell-13');
+    const resetButton = document.createElement('input');
+    resetButton.type = 'button';
+    resetButton.value = 'Reset';
+    resetButton.onclick = resetFields;
+    cell13.querySelector('p').appendChild(resetButton);
+});
