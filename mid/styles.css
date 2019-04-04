@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.outer-border {
+    background: #fff;
+    padding: 8px;
+    border: 6px solid #888;
+    box-shadow: 8px 8px 0 #222, 0 0 0 4px #888, 0 0 0 8px #fff;
+    border-radius: 16px;
