@@ -36,3 +36,22 @@ body {
 
 .cell {
     background-color: #e8e8e8;
+    border: 6px solid #bdbdbd;
+    padding: 18px 12px;
+    color: #222;
+    overflow: auto;
+    border-radius: 7px;
+    box-shadow: 0 2px 8px #ccc8;
+}
+
+.cell-1, .cell-6 {
+    background-color: #fa3d4f;
+    border: 6px solid #bdbdbd;
+}
+
+.cell-1 h3, .cell-1 p, .cell-6 h3, .cell-6 p {
+    color: #111;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
