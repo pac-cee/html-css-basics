@@ -17,3 +17,22 @@ body {
     border: 6px solid #888;
     box-shadow: 8px 8px 0 #222, 0 0 0 4px #888, 0 0 0 8px #fff;
     border-radius: 16px;
+    width: fit-content;
+    margin: 18px auto;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px #bbb7;
+    border: 6px solid #bdbdbd;
+}
+
+.cell {
+    background-color: #e8e8e8;
