@@ -131,3 +131,19 @@ body {
 }
 
 .cell-13 {
+    grid-column: 6 / 7;
+    grid-row: 4 / 5;
+    height: 150px; /* Customize this height as needed */
+}
+
+/* Add media queries for responsive design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cell {
+        grid-column: auto !important;
+        grid-row: auto !important;
+    }
+}
