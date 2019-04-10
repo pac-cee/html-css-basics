@@ -1,0 +1,19 @@
+
+body{
+    margin: 20px;
+    background-image: url('backgrd.jpg');
+    object-fit: cover;
+    background-repeat: no-repeat;
+    position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+.header{
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+.header td img{
+    height: auto;
