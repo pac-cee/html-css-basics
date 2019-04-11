@@ -55,3 +55,21 @@ body{
 .td1{
     background-color: white;
     margin-right: 30px;
+    
+}
+.td2{
+    width: 20%;
+    background-color: white;
+    margin: 15px;
+    padding: 20px;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+.td3{
+    background-color: white;
+    margin-left: 30px;
+}
