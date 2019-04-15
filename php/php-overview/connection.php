@@ -17,3 +17,11 @@ try {
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_TIMEOUT => 5,
         ]
+    );
+    
+
+    
+} catch(PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
+?>
