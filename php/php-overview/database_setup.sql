@@ -17,3 +17,22 @@ CREATE TABLE IF NOT EXISTS projects (
     user_id INT,
     title VARCHAR(100) NOT NULL,
     description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+-- Create Tasks table
+CREATE TABLE IF NOT EXISTS tasks (
+    task_id INT PRIMARY KEY AUTO_INCREMENT,
+    project_id INT,
+    title VARCHAR(100) NOT NULL,
+    status ENUM('pending', 'in_progress', 'completed') DEFAULT 'pending',
+    due_date DATE,
+    FOREIGN KEY (project_id) REFERENCES projects(project_id)
+);
+
+/*
+
+-- Insert sample data
+INSERT INTO users (username, email, password_hash) VALUES
