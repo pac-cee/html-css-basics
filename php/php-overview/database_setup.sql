@@ -36,3 +36,15 @@ CREATE TABLE IF NOT EXISTS tasks (
 
 -- Insert sample data
 INSERT INTO users (username, email, password_hash) VALUES
+('john_doe', 'john@example.com', 'hashed_password_1'),
+('jane_smith', 'jane@example.com', 'hashed_password_2');
+
+INSERT INTO projects (user_id, title, description) VALUES
+(1, 'Portfolio Website', 'Personal portfolio website development'),
+(2, 'E-commerce Site', 'Online store for digital products');
+
+INSERT INTO tasks (project_id, title, status, due_date) VALUES
+(1, 'Design Homepage', 'in_progress', '2024-04-15'),
+(1, 'Implement Contact Form', 'pending', '2024-04-20'),
+(2, 'Setup Payment Gateway', 'pending', '2024-04-25');
+*/
