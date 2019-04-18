@@ -36,3 +36,22 @@ class FormValidator {
     
     public function getErrors() {
         return $this->errors;
+    }
+}
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $validator = new FormValidator();
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    
+    if ($validator->validateName($name)) {
+        try {
+            // Insert into database
+            $stmt = $pdo->prepare("INSERT INTO users (name, created_at) VALUES (?, NOW())");
+            $stmt->execute([$name]);
+            
+            // Store in session
+            $_SESSION['user_name'] = $name;
+            $_SESSION['success_message'] = "Welcome, $name!";
+            
+        } catch(PDOException $e) {
