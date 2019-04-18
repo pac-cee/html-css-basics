@@ -93,3 +93,21 @@
             .then(response => response.text())
             .then(data => {
                 if (data === 'success') {
+                    alert('User added successfully!');
+                    this.reset();
+                } else {
+                    messageDiv.textContent = 'Error: ' + data;
+                }
+            })
+            .catch(error => {
+                messageDiv.textContent = 'Error: ' + error;
+            });
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>
