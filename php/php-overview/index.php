@@ -55,3 +55,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['success_message'] = "Welcome, $name!";
             
         } catch(PDOException $e) {
+            $_SESSION['error_message'] = "Database error: " . $e->getMessage();
+        }
+    } else {
+        $_SESSION['error_message'] = implode(", ", $validator->getErrors());
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced PHP Demo</title>
+    <style>
+        .error { color: red; }
+        .success { color: green; }
+        .form-container { margin: 20px; padding: 20px; }
+    </style>
