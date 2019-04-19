@@ -74,3 +74,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .success { color: green; }
         .form-container { margin: 20px; padding: 20px; }
     </style>
+</head>
+<body>
+    <div class="form-container">
+        <?php
+        // Display messages
+        if (isset($_SESSION['error_message'])) {
+            echo "<p class='error'>" . htmlspecialchars($_SESSION['error_message']) . "</p>";
+            unset($_SESSION['error_message']);
+        }
+        if (isset($_SESSION['success_message'])) {
+            echo "<p class='success'>" . htmlspecialchars($_SESSION['success_message']) . "</p>";
+            unset($_SESSION['success_message']);
+        }
+        ?>
+
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+            <label for="name">Name:</label>
+            <input type="text" name="name" placeholder="Enter your name" 
+                   value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>"
