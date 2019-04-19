@@ -17,3 +17,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         if ($age < 1 || $age > 150) {
+            throw new Exception('Invalid age');
+        }
+
+        // Insert into database
+        $stmt = $pdo->prepare("INSERT INTO students (name, email, age) VALUES (?, ?, ?)");
+        $stmt->execute([$name, $email, $age]);
+
+        echo 'success';
+    } catch (PDOException $e) {
+        if ($e->getCode() == 23000) {
+            echo 'Email already exists!';
+        } else {
+            echo 'Database error: ' . $e->getMessage();
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+} else {
+    header('Location: index.html');
+    exit;
+}
