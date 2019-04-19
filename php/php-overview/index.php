@@ -93,3 +93,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="name">Name:</label>
             <input type="text" name="name" placeholder="Enter your name" 
                    value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>"
+                   required>
+            <input type="submit" value="Submit">
+        </form>
+
+        <?php if (isset($_SESSION['user_name'])): ?>
+            <h3>Recent Users:</h3>
+            <?php
+            try {
+                $stmt = $pdo->query("SELECT name, created_at FROM users ORDER BY created_at DESC LIMIT 5");
+                while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    echo "<p>" . htmlspecialchars($row['name']) . 
+                         " - " . date("F j, Y, g:i a", strtotime($row['created_at'])) . "</p>";
+                }
+            } catch(PDOException $e) {
+                echo "<p class='error'>Error retrieving users</p>";
+            }
+            ?>
+        <?php endif; ?>
+    </div>
+</body>
+</html>
