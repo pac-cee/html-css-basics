@@ -17,3 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (mysqli_query($conn, $sql)) {
         echo "New user added successfully!";
     } else {
+        echo "Error: " . mysqli_error($conn);
+    }
+    
+    // Close the connection
+    mysqli_close($conn);
+}
+?>
