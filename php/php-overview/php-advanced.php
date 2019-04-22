@@ -36,3 +36,22 @@ function getKeyValues() {
     yield 'key1' => 'value1';
     yield 'key2' => 'value2';
     yield 'key3' => 'value3';
+}
+
+foreach (getKeyValues() as $key => $value) {
+    echo "$key: $value<br>";
+}
+
+// Yielding from another generator or traversable (PHP 7+)
+function innerGenerator() {
+    yield 1;
+    yield 2;
+}
+
+function outerGenerator() {
+    yield 0;
+    yield from innerGenerator(); // Yields 1, 2
+    yield 3;
+}
+
+// Generator delegation
