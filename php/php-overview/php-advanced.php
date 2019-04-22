@@ -17,3 +17,22 @@
 // ====================================
 // GENERATORS AND ITERATORS
 // ====================================
+
+// Generators (PHP 5.5+)
+// Memory-efficient way to iterate over large datasets
+function getRange($start, $end) {
+    for ($i = $start; $i <= $end; $i++) {
+        yield $i;
+    }
+}
+
+foreach (getRange(1, 1000000) as $number) {
+    echo $number . " ";
+    if ($number > 10) break;
+}
+
+// Generator with key-value pairs
+function getKeyValues() {
+    yield 'key1' => 'value1';
+    yield 'key2' => 'value2';
+    yield 'key3' => 'value3';
