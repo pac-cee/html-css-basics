@@ -55,3 +55,22 @@ function outerGenerator() {
 }
 
 // Generator delegation
+function count_to_ten() {
+    yield 1;
+    yield 2;
+    yield from [3, 4, 5];
+    yield from new ArrayIterator([6, 7]);
+    yield from eight_nine_ten();
+}
+
+function eight_nine_ten() {
+    yield 8;
+    yield 9;
+    yield 10;
+}
+
+// Sending values to generators
+function logger() {
+    while (true) {
+        $message = yield;
+        echo date('Y-m-d H:i:s') . ": $message<br>";
