@@ -74,3 +74,22 @@ function logger() {
     while (true) {
         $message = yield;
         echo date('Y-m-d H:i:s') . ": $message<br>";
+    }
+}
+
+$logger = logger();
+$logger->send('Log entry 1');
+$logger->send('Log entry 2');
+
+// Returning values from generators (PHP 7+)
+function getValues() {
+    yield 'a' => 1;
+    yield 'b' => 2;
+    
+    return "Generator finished";
+}
+
+$generator = getValues();
+foreach ($generator as $key => $value) {
+    echo "$key: $value<br>";
+}
