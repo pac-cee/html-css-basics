@@ -112,3 +112,22 @@ class MyIterator implements Iterator {
         return $this->position;
     }
     
+    public function next() {
+        ++$this->position;
+    }
+    
+    public function valid() {
+        return isset($this->array[$this->position]);
+    }
+}
+
+$iterator = new MyIterator();
+foreach ($iterator as $key => $value) {
+    echo "$key: $value<br>";
+}
+
+// SPL iterators
+// DirectoryIterator
+$dir = new DirectoryIterator('/path/to/directory');
+foreach ($dir as $fileInfo) {
+    if ($fileInfo->isFile()) {
