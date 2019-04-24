@@ -93,3 +93,22 @@ $generator = getValues();
 foreach ($generator as $key => $value) {
     echo "$key: $value<br>";
 }
+echo $generator->getReturn(); // "Generator finished"
+
+// Custom iterators
+class MyIterator implements Iterator {
+    private $position = 0;
+    private $array = ['first', 'second', 'third'];
+    
+    public function rewind() {
+        $this->position = 0;
+    }
+    
+    public function current() {
+        return $this->array[$this->position];
+    }
+    
+    public function key() {
+        return $this->position;
+    }
+    
