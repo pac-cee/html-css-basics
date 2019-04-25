@@ -131,3 +131,22 @@ foreach ($iterator as $key => $value) {
 $dir = new DirectoryIterator('/path/to/directory');
 foreach ($dir as $fileInfo) {
     if ($fileInfo->isFile()) {
+        echo $fileInfo->getFilename() . "<br>";
+    }
+}
+
+// RecursiveDirectoryIterator
+$dir = new RecursiveDirectoryIterator('/path/to/directory');
+$iterator = new RecursiveIteratorIterator($dir);
+foreach ($iterator as $fileInfo) {
+    if ($fileInfo->isFile()) {
+        echo $fileInfo->getPathname() . "<br>";
+    }
+}
+
+// ArrayIterator
+$array = ['apple', 'banana', 'cherry'];
+$iterator = new ArrayIterator($array);
+while ($iterator->valid()) {
+    echo $iterator->current() . "<br>";
+    $iterator->next();
