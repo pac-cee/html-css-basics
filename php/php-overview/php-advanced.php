@@ -150,3 +150,22 @@ $iterator = new ArrayIterator($array);
 while ($iterator->valid()) {
     echo $iterator->current() . "<br>";
     $iterator->next();
+}
+
+// FilterIterator
+class OddNumbersFilter extends FilterIterator {
+    public function accept() {
+        return $this->current() % 2 !== 0;
+    }
+}
+
+$numbers = new ArrayIterator([1, 2, 3, 4, 5, 6]);
+$oddNumbers = new OddNumbersFilter($numbers);
+foreach ($oddNumbers as $number) {
+    echo $number . "<br>"; // 1, 3, 5
+}
+
+// ====================================
+// CLOSURES AND ANONYMOUS FUNCTIONS
+// ====================================
+
