@@ -169,3 +169,22 @@ foreach ($oddNumbers as $number) {
 // CLOSURES AND ANONYMOUS FUNCTIONS
 // ====================================
 
+// Anonymous functions
+$greet = function($name) {
+    return "Hello, $name!";
+};
+echo $greet("John"); // Hello, John!
+
+// Closures with 'use' keyword
+$message = "Welcome";
+$greet = function($name) use ($message) {
+    return "$message, $name!";
+};
+echo $greet("John"); // Welcome, John!
+
+// Modifying variables with 'use' by reference
+$counter = 0;
+$increment = function() use (&$counter) {
+    $counter++;
+};
+$increment();
