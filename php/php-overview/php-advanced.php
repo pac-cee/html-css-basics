@@ -245,3 +245,22 @@ echo $getA(); // 1
 
 // Reflecting on classes
 $reflectionClass = new ReflectionClass('DateTime');
+echo $reflectionClass->getName();
+var_dump($reflectionClass->isAbstract());
+var_dump($reflectionClass->isFinal());
+var_dump($reflectionClass->isInstantiable());
+
+// Get class methods
+$methods = $reflectionClass->getMethods();
+foreach ($methods as $method) {
+    echo $method->getName() . "<br>";
+}
+
+// Get specific method
+$method = $reflectionClass->getMethod('format');
+echo $method->getName();
+var_dump($method->isPublic());
+var_dump($method->isStatic());
+
+// Get method parameters
+$params = $method->getParameters();
