@@ -207,3 +207,22 @@ function curry($function, ...$args) {
     };
 }
 
+function add($a, $b, $c) {
+    return $a + $b + $c;
+}
+
+$add5 = curry('add', 5);
+$add5and10 = curry($add5, 10);
+echo $add5and10(15); // 30
+
+// Using closures with array functions
+$numbers = [1, 2, 3, 4, 5];
+$doubled = array_map(function($n) { return $n * 2; }, $numbers);
+$filtered = array_filter($numbers, function($n) { return $n % 2 === 0; });
+$sum = array_reduce($numbers, function($carry, $n) { return $carry + $n; }, 0);
+
+// Callable type hint
+function process(callable $callback, $value) {
+    return $callback($value);
+}
+echo process(function($n) { return $n * 2; }, 5); // 10
