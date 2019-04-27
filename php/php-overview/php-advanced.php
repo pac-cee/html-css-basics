@@ -188,3 +188,22 @@ $increment = function() use (&$counter) {
     $counter++;
 };
 $increment();
+$increment();
+echo $counter; // 2
+
+// Arrow functions (PHP 7.4+)
+$multiply = fn($a, $b) => $a * $b;
+echo $multiply(5, 3); // 15
+
+// Implicit variable access in arrow functions
+$factor = 2;
+$multiply = fn($num) => $num * $factor; // $factor is implicitly captured
+echo $multiply(5); // 10
+
+// Function currying
+function curry($function, ...$args) {
+    return function(...$moreArgs) use ($function, $args) {
+        return $function(...array_merge($args, $moreArgs));
+    };
+}
+
