@@ -226,3 +226,22 @@ function process(callable $callback, $value) {
     return $callback($value);
 }
 echo process(function($n) { return $n * 2; }, 5); // 10
+
+// Closure::bind() and Closure::bindTo()
+class A {
+    private $value = 1;
+}
+
+$getPrivate = function() {
+    return $this->value;
+};
+
+$getA = $getPrivate->bindTo(new A, 'A'); // Bind to A instance and scope
+echo $getA(); // 1
+
+// ====================================
+// REFLECTION API
+// ====================================
+
+// Reflecting on classes
+$reflectionClass = new ReflectionClass('DateTime');
