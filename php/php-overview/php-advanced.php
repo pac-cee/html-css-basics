@@ -264,3 +264,22 @@ var_dump($method->isStatic());
 
 // Get method parameters
 $params = $method->getParameters();
+foreach ($params as $param) {
+    echo $param->getName();
+    echo $param->isOptional() ? " (optional)" : " (required)";
+    echo "<br>";
+}
+
+// Reflecting on functions
+$reflectionFunction = new ReflectionFunction('array_map');
+echo $reflectionFunction->getName();
+var_dump($reflectionFunction->isInternal()); // True for PHP built-in functions
+
+// Get function parameters
+$params = $reflectionFunction->getParameters();
+foreach ($params as $param) {
+    echo $param->getName() . "<br>";
+}
+
+// Create an instance using Reflection
+$reflectionClass = new ReflectionClass('DateTime');
