@@ -302,3 +302,22 @@ $instance = new MyClass();
 $property = $reflectionClass->getProperty('privateProperty');
 $property->setAccessible(true);
 echo $property->getValue($instance); // "secret"
+$property->setValue($instance, "new value");
+
+// Call private method
+$method = $reflectionClass->getMethod('privateMethod');
+$method->setAccessible(true);
+echo $method->invoke($instance); // "private method called"
+
+// Using Reflection for annotations/attributes
+/**
+ * @Entity
+ * @Table(name="users")
+ */
+class User {
+    /**
+     * @Column(type="integer")
+     * @Id
+     */
+    private $id;
+    
