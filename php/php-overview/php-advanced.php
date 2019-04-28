@@ -283,3 +283,22 @@ foreach ($params as $param) {
 
 // Create an instance using Reflection
 $reflectionClass = new ReflectionClass('DateTime');
+$instance = $reflectionClass->newInstance('2023-01-01');
+echo $instance->format('Y-m-d');
+
+// Access private members
+class MyClass {
+    private $privateProperty = "secret";
+    
+    private function privateMethod() {
+        return "private method called";
+    }
+}
+
+$reflectionClass = new ReflectionClass('MyClass');
+$instance = new MyClass();
+
+// Access private property
+$property = $reflectionClass->getProperty('privateProperty');
+$property->setAccessible(true);
+echo $property->getValue($instance); // "secret"
