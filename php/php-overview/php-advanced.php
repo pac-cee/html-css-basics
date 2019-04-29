@@ -473,3 +473,22 @@ class Singleton {
     public static function getInstance() {
         if (self::$instance === null) {
             self::$instance = new self();
+        }
+        return self::$instance;
+    }
+    
+    public function someMethod() {
+        return "Method called";
+    }
+    
+    // Prevent cloning
+    private function __clone() {}
+    
+    // Prevent unserialization
+    private function __wakeup() {}
+}
+
+// Usage
+$singleton = Singleton::getInstance();
+echo $singleton->someMethod();
+
