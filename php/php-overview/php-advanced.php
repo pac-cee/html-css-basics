@@ -435,3 +435,22 @@ class Container {
     
     public function set($id, $service) {
         $this->services[$id] = $service;
+    }
+    
+    public function get($id) {
+        if (!isset($this->instances[$id])) {
+            $this->instances[$id] = $this->services[$id]($this);
+        }
+        return $this->instances[$id];
+    }
+}
+
+// Usage
+$container = new Container();
+
+$container->set('database', function($c) {
+    return new Database();
+});
+
+$container->set('userRepository', function($c) {
+    return new UserRepository($c->get('database'));
