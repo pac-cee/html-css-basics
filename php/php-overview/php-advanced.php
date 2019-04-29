@@ -397,3 +397,22 @@ interface Logger {
     public function log($message);
 }
 
+class FileLogger implements Logger {
+    public function log($message) {
+        file_put_contents('app.log', $message . "\n", FILE_APPEND);
+    }
+}
+
+class DatabaseLogger implements Logger {
+    private $db;
+    
+    public function __construct(Database $db) {
+        $this->db = $db;
+    }
+    
+    public function log($message) {
+        $this->db->query("INSERT INTO logs (message) VALUES ('$message')");
+    }
+}
+
+class UserService {
