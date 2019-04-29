@@ -378,3 +378,22 @@ class UserController {
         return "User: $user";
     }
 }
+
+// Property injection
+class ProductService {
+    public $repository;
+    
+    public function setRepository(ProductRepository $repository) {
+        $this->repository = $repository;
+    }
+    
+    public function getById($id) {
+        return $this->repository->findById($id);
+    }
+}
+
+// Interface-based dependency injection
+interface Logger {
+    public function log($message);
+}
+
