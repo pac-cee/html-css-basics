@@ -416,3 +416,22 @@ class DatabaseLogger implements Logger {
 }
 
 class UserService {
+    private $logger;
+    
+    public function __construct(Logger $logger) {
+        $this->logger = $logger;
+    }
+    
+    public function create($userData) {
+        // Create user
+        $this->logger->log("User created: " . $userData['email']);
+    }
+}
+
+// Simple dependency injection container
+class Container {
+    private $services = [];
+    private $instances = [];
+    
+    public function set($id, $service) {
+        $this->services[$id] = $service;
