@@ -340,3 +340,22 @@ class User {
 //     #[Column(type: 'string', length: 100)]
 //     private $name;
 // }
+
+// ====================================
+// DEPENDENCY INJECTION
+// ====================================
+
+// Manual dependency injection
+class Database {
+    public function query($sql) {
+        // Implementation
+        return "Query result for: $sql";
+    }
+}
+
+class UserRepository {
+    private $database;
+    
+    // Constructor injection
+    public function __construct(Database $database) {
+        $this->database = $database;
