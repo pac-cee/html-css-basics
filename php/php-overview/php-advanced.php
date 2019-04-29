@@ -321,3 +321,22 @@ class User {
      */
     private $id;
     
+    /**
+     * @Column(type="string", length=100)
+     */
+    private $name;
+}
+
+// Parse annotations (requires a specialized library or custom parser)
+
+// PHP 8 Attributes (modern alternative to docblock annotations)
+// #[Entity]
+// #[Table(name: 'users')]
+// class User {
+//     #[Column(type: 'integer')]
+//     #[Id]
+//     private $id;
+//    
+//     #[Column(type: 'string', length: 100)]
+//     private $name;
+// }
