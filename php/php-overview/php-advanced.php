@@ -511,3 +511,22 @@ class Truck implements Vehicle {
 
 class VehicleFactory {
     public static function create($type) {
+        switch ($type) {
+            case 'car':
+                return new Car();
+            case 'truck':
+                return new Truck();
+            default:
+                throw new Exception("Unknown vehicle type");
+        }
+    }
+}
+
+// Usage
+$car = VehicleFactory::create('car');
+echo $car->drive();
+
+// Observer Pattern
+interface Observer {
+    public function update($subject);
+}
