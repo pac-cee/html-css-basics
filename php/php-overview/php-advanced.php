@@ -359,3 +359,22 @@ class UserRepository {
     // Constructor injection
     public function __construct(Database $database) {
         $this->database = $database;
+    }
+    
+    public function findById($id) {
+        return $this->database->query("SELECT * FROM users WHERE id = $id");
+    }
+}
+
+// Usage
+$database = new Database();
+$userRepository = new UserRepository($database);
+echo $userRepository->findById(1);
+
+// Method injection
+class UserController {
+    public function show($id, UserRepository $userRepository) {
+        $user = $userRepository->findById($id);
+        return "User: $user";
+    }
+}
