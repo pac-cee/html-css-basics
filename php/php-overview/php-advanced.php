@@ -492,3 +492,22 @@ class Singleton {
 $singleton = Singleton::getInstance();
 echo $singleton->someMethod();
 
+// Factory Pattern
+interface Vehicle {
+    public function drive();
+}
+
+class Car implements Vehicle {
+    public function drive() {
+        return "Driving a car";
+    }
+}
+
+class Truck implements Vehicle {
+    public function drive() {
+        return "Driving a truck";
+    }
+}
+
+class VehicleFactory {
+    public static function create($type) {
