@@ -625,3 +625,22 @@ $sorter = new Sorter(new BubbleSort());
 $sorter->sort([3, 1, 4, 1, 5]);
 
 $sorter->setStrategy(new QuickSort());
+$sorter->sort([3, 1, 4, 1, 5]);
+
+// Repository Pattern
+interface UserRepositoryInterface {
+    public function findById($id);
+    public function findAll();
+    public function save(User $user);
+    public function delete(User $user);
+}
+
+class MySQLUserRepository implements UserRepositoryInterface {
+    private $db;
+    
+    public function __construct(Database $db) {
+        $this->db = $db;
+    }
+    
+    public function findById($id) {
+        return $this->db->query("SELECT * FROM users WHERE id = $id");
