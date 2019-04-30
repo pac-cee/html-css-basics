@@ -549,3 +549,22 @@ class Subject {
     public function setState($state) {
         $this->state = $state;
         $this->notify();
+    }
+    
+    public function getState() {
+        return $this->state;
+    }
+    
+    private function notify() {
+        foreach ($this->observers as $observer) {
+            $observer->update($this);
+        }
+    }
+}
+
+class ConcreteObserver implements Observer {
+    private $name;
+    
+    public function __construct($name) {
+        $this->name = $name;
+    }
