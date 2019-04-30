@@ -644,3 +644,22 @@ class MySQLUserRepository implements UserRepositoryInterface {
     
     public function findById($id) {
         return $this->db->query("SELECT * FROM users WHERE id = $id");
+    }
+    
+    public function findAll() {
+        return $this->db->query("SELECT * FROM users");
+    }
+    
+    public function save(User $user) {
+        // Implementation
+    }
+    
+    public function delete(User $user) {
+        // Implementation
+    }
+}
+
+// ====================================
+// WORKING WITH STREAMS
+// ====================================
+
