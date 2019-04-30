@@ -606,3 +606,22 @@ class QuickSort implements SortStrategy {
 
 class Sorter {
     private $strategy;
+    
+    public function __construct(SortStrategy $strategy) {
+        $this->strategy = $strategy;
+    }
+    
+    public function setStrategy(SortStrategy $strategy) {
+        $this->strategy = $strategy;
+    }
+    
+    public function sort(array $data): array {
+        return $this->strategy->sort($data);
+    }
+}
+
+// Usage
+$sorter = new Sorter(new BubbleSort());
+$sorter->sort([3, 1, 4, 1, 5]);
+
+$sorter->setStrategy(new QuickSort());
