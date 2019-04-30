@@ -587,3 +587,22 @@ $subject->setState("New state");
 interface SortStrategy {
     public function sort(array $data): array;
 }
+
+class BubbleSort implements SortStrategy {
+    public function sort(array $data): array {
+        // Bubble sort implementation
+        echo "Sorting using bubble sort<br>";
+        return $data;
+    }
+}
+
+class QuickSort implements SortStrategy {
+    public function sort(array $data): array {
+        // Quick sort implementation
+        echo "Sorting using quick sort<br>";
+        return $data;
+    }
+}
+
+class Sorter {
+    private $strategy;
