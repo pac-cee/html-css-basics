@@ -568,3 +568,22 @@ class ConcreteObserver implements Observer {
     public function __construct($name) {
         $this->name = $name;
     }
+    
+    public function update($subject) {
+        echo $this->name . " received update: " . $subject->getState() . "<br>";
+    }
+}
+
+// Usage
+$subject = new Subject();
+$observer1 = new ConcreteObserver("Observer 1");
+$observer2 = new ConcreteObserver("Observer 2");
+
+$subject->attach($observer1);
+$subject->attach($observer2);
+$subject->setState("New state");
+
+// Strategy Pattern
+interface SortStrategy {
+    public function sort(array $data): array;
+}
