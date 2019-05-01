@@ -720,3 +720,22 @@ class CustomStreamWrapper {
     
     public function stream_open($path, $mode, $options, &$opened_path) {
         $this->position = 0;
+        $this->data = "Hello from custom stream wrapper!";
+        return true;
+    }
+    
+    public function stream_read($count) {
+        $ret = substr($this->data, $this->position, $count);
+        $this->position += strlen($ret);
+        return $ret;
+    }
+    
+    public function stream_write($data) {
+        $this->data = substr_replace($this->data, $data, $this->position, strlen($data));
+        $this->position += strlen($data);
+        return strlen($data);
+    }
+    
+    public function stream_tell() {
+        return $this->position;
+    }
