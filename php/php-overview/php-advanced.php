@@ -682,3 +682,22 @@ fwrite($handle, 'Hello, World!');
 fputs($handle, 'Another message'); // Alias of fwrite
 
 // Stream positioning
+fseek($handle, 10, SEEK_SET); // Move to position 10 from start
+fseek($handle, -5, SEEK_END); // Move to position 5 before end
+fseek($handle, 3, SEEK_CUR); // Move 3 positions forward from current
+
+ftell($handle); // Get current position
+rewind($handle); // Move to beginning of stream
+
+// Checking stream status
+feof($handle); // Check if end of file reached
+fstat($handle); // Get file status
+
+// Stream metadata
+stream_get_meta_data($handle);
+
+// Stream contexts
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => 'Content-Type: application/x-www-form-urlencoded',
