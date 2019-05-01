@@ -663,3 +663,22 @@ class MySQLUserRepository implements UserRepositoryInterface {
 // WORKING WITH STREAMS
 // ====================================
 
+// Opening streams
+$handle = fopen('file.txt', 'r'); // File stream
+$handle = fopen('http://example.com', 'r'); // HTTP stream
+$handle = fopen('php://memory', 'r+'); // Memory stream
+$handle = fopen('php://temp', 'r+'); // Temp stream
+$handle = fopen('php://stdin', 'r'); // Standard input stream
+$handle = fopen('php://stdout', 'w'); // Standard output stream
+$handle = fopen('php://filter/read=string.toupper/resource=file.txt', 'r'); // Filtered stream
+
+// Reading from streams
+$data = fread($handle, 1024); // Read up to 1024 bytes
+$line = fgets($handle); // Read a line
+$char = fgetc($handle); // Read a character
+
+// Writing to streams
+fwrite($handle, 'Hello, World!');
+fputs($handle, 'Another message'); // Alias of fwrite
+
+// Stream positioning
