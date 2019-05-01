@@ -701,3 +701,22 @@ $context = stream_context_create([
     'http' => [
         'method' => 'POST',
         'header' => 'Content-Type: application/x-www-form-urlencoded',
+        'content' => http_build_query(['key' => 'value'])
+    ]
+]);
+$handle = fopen('http://example.com', 'r', false, $context);
+
+// Memory streams
+$memoryStream = fopen('php://memory', 'r+');
+fwrite($memoryStream, 'Data in memory');
+rewind($memoryStream);
+$data = stream_get_contents($memoryStream);
+fclose($memoryStream);
+
+// Stream wrappers
+class CustomStreamWrapper {
+    private $position;
+    private $data;
+    
+    public function stream_open($path, $mode, $options, &$opened_path) {
+        $this->position = 0;
