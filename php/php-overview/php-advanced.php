@@ -758,3 +758,22 @@ class CustomStreamWrapper {
         }
         return true;
     }
+}
+
+stream_wrapper_register('custom', 'CustomStreamWrapper');
+$handle = fopen('custom://something', 'r');
+echo fread($handle, 1024);
+fclose($handle);
+
+// ====================================
+// PERFORMANCE OPTIMIZATION
+// ====================================
+
+// Opcode caching
+// Using OPcache (built into PHP 5.5+)
+opcache_reset(); // Clear the opcode cache
+opcache_get_status(); // Get cache status
+opcache_compile_file('script.php'); // Pre-compile script
+
+// Benchmarking code
+$startTime = microtime(true);
