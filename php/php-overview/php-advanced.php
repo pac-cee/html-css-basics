@@ -777,3 +777,22 @@ opcache_compile_file('script.php'); // Pre-compile script
 
 // Benchmarking code
 $startTime = microtime(true);
+// Code to benchmark
+$endTime = microtime(true);
+$executionTime = $endTime - $startTime;
+echo "Execution time: " . ($executionTime * 1000) . " ms";
+
+// Memory usage
+$memoryBefore = memory_get_usage();
+// Code to measure
+$memoryAfter = memory_get_usage();
+echo "Memory used: " . ($memoryAfter - $memoryBefore) . " bytes";
+echo "Peak memory usage: " . memory_get_peak_usage() . " bytes";
+
+// Optimize loops
+$arr = [];
+$count = count($arr); // Store count() result instead of calling in each iteration
+for ($i = 0; $i < $count; $i++) {
+    // Loop logic
+}
+
