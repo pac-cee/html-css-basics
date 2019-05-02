@@ -739,3 +739,22 @@ class CustomStreamWrapper {
     public function stream_tell() {
         return $this->position;
     }
+    
+    public function stream_eof() {
+        return $this->position >= strlen($this->data);
+    }
+    
+    public function stream_seek($offset, $whence) {
+        switch ($whence) {
+            case SEEK_SET:
+                $this->position = $offset;
+                break;
+            case SEEK_CUR:
+                $this->position += $offset;
+                break;
+            case SEEK_END:
+                $this->position = strlen($this->data) + $offset;
+                break;
+        }
+        return true;
+    }
