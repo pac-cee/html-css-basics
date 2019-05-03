@@ -796,3 +796,22 @@ for ($i = 0; $i < $count; $i++) {
     // Loop logic
 }
 
+// Use references for large arrays
+foreach ($largeArray as &$value) {
+    $value *= 2; // Modify in place without copying
+}
+unset($value); // Unset reference after use
+
+// Output buffering
+ob_start(); // Start output buffering
+echo "Some output";
+$output = ob_get_clean(); // Get output and clear buffer
+
+// Database optimization
+// Use prepared statements
+$stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
+$stmt->execute([$id]);
+
+// Limit query results
+$stmt = $pdo->query("SELECT * FROM users LIMIT 10 OFFSET 20");
+
