@@ -834,3 +834,23 @@ function getDataWithCache($key, $ttl = 3600) {
     $cacheFile = 'cache/' . md5($key) . '.cache';
     
     if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $ttl)) {
+        return unserialize(file_get_contents($cacheFile));
+    }
+    
+    // Get fresh data
+    $data = getFreshData();
+    
+    // Cache it
+    file_put_contents($cacheFile, serialize($data));
+    
+    return $data;
+}
+
+// Function memoization
+function memoize($func) {
+    $cache = [];
+    return function() use ($func, &$cache) {
+        $args = func_get_args();
+        $key = serialize($args);
+        
+        if (!isset($cache[$key])) {
