@@ -815,3 +815,22 @@ $stmt->execute([$id]);
 // Limit query results
 $stmt = $pdo->query("SELECT * FROM users LIMIT 10 OFFSET 20");
 
+// Index database tables
+// CREATE INDEX idx_users_email ON users(email);
+
+// Use transactions for multiple operations
+$pdo->beginTransaction();
+try {
+    // Multiple queries
+    $pdo->commit();
+} catch (Exception $e) {
+    $pdo->rollBack();
+    throw $e;
+}
+
+// Caching
+// Simple file cache
+function getDataWithCache($key, $ttl = 3600) {
+    $cacheFile = 'cache/' . md5($key) . '.cache';
+    
+    if (file_exists($cacheFile) && (time() - filemtime($cacheFile) < $ttl)) {
