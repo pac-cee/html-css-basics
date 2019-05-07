@@ -93,3 +93,22 @@ $a !== $b; // Not identical
 $a > $b; // Greater than
 $a >= $b; // Greater than or equal to
 $a < $b; // Less than
+$a <= $b; // Less than or equal to
+$a <=> $b; // Spaceship operator (returns -1, 0, or 1)
+
+// Logical operators
+$x && $y; // Logical AND
+$x || $y; // Logical OR
+!$x; // Logical NOT
+$x and $y; // Alternative AND (lower precedence)
+$x or $y; // Alternative OR (lower precedence)
+$x xor $y; // Exclusive OR
+
+// String operators
+$greeting = "Hello";
+$fullGreeting = $greeting . " World!"; // Concatenation
+$greeting .= " World!"; // Concatenation assignment
+
+// ====================================
+// CONTROL STRUCTURES
+// ====================================
