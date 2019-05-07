@@ -74,3 +74,22 @@ echo $a + $b; // Addition: 13
 echo $a - $b; // Subtraction: 7
 echo $a * $b; // Multiplication: 30
 echo $a / $b; // Division: 3.33...
+echo $a % $b; // Modulus (remainder): 1
+echo $a ** $b; // Exponentiation: 1000
+
+// Assignment operators
+$c = 5; // Basic assignment
+$c += 3; // $c = $c + 3; (value becomes 8)
+$c -= 2; // $c = $c - 2; (value becomes 6)
+$c *= 2; // $c = $c * 2; (value becomes 12)
+$c /= 4; // $c = $c / 4; (value becomes 3)
+$c %= 2; // $c = $c % 2; (value becomes 1)
+
+// Comparison operators
+$a == $b; // Equal (value)
+$a === $b; // Identical (value and type)
+$a != $b; // Not equal
+$a !== $b; // Not identical
+$a > $b; // Greater than
+$a >= $b; // Greater than or equal to
+$a < $b; // Less than
