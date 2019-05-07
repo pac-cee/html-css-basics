@@ -55,3 +55,22 @@ const DATABASE_NAME = "my_app"; // Alternative constant definition
 
 // Data type checking
 echo gettype($name); // Returns the type as string
+var_dump($name); // Outputs type and value
+is_string($name); // Type-specific check, returns boolean
+
+// Type casting
+$numString = "42";
+$num = (int)$numString; // Cast to integer
+$stringNum = (string)$num; // Cast to string
+
+// ====================================
+// OPERATORS
+// ====================================
+
+// Arithmetic operators
+$a = 10;
+$b = 3;
+echo $a + $b; // Addition: 13
+echo $a - $b; // Subtraction: 7
+echo $a * $b; // Multiplication: 30
+echo $a / $b; // Division: 3.33...
