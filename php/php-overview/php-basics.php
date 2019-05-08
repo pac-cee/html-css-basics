@@ -150,3 +150,22 @@ $status = ($age >= 18) ? "Adult" : "Minor";
 
 // Null coalescing operator (PHP 7+)
 $username = $_GET['username'] ?? "Guest";
+
+// Loops
+// For loop
+for ($i = 1; $i <= 5; $i++) {
+    echo "Iteration: $i<br>";
+}
+
+// While loop
+$counter = 1;
+while ($counter <= 5) {
+    echo "Counter: $counter<br>";
+    $counter++;
+}
+
+// Do-while loop
+$num = 1;
+do {
+    echo "Number: $num<br>";
+    $num++;
