@@ -169,3 +169,22 @@ $num = 1;
 do {
     echo "Number: $num<br>";
     $num++;
+} while ($num <= 5);
+
+// Foreach loop (for arrays)
+$colors = ["red", "green", "blue"];
+foreach ($colors as $color) {
+    echo "Color: $color<br>";
+}
+
+// Foreach with key => value
+$person = [
+    "name" => "John",
+    "age" => 30,
+    "job" => "Developer"
+];
+foreach ($person as $key => $value) {
+    echo "$key: $value<br>";
+}
+
+// Loop control
