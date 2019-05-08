@@ -131,3 +131,22 @@ $day = "Monday";
 
 switch ($day) {
     case "Monday":
+        echo "Start of work week";
+        break;
+    case "Friday":
+        echo "End of work week";
+        break;
+    case "Saturday":
+    case "Sunday":
+        echo "Weekend";
+        break;
+    default:
+        echo "Regular work day";
+}
+
+// Ternary operator
+$age = 20;
+$status = ($age >= 18) ? "Adult" : "Minor";
+
+// Null coalescing operator (PHP 7+)
+$username = $_GET['username'] ?? "Guest";
