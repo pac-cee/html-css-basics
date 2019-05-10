@@ -264,3 +264,22 @@ $colors = ["Red", "Green", "Blue"]; // Short syntax (PHP 5.4+)
 
 // Associative arrays (key-value pairs)
 $user = [
+    "name" => "John",
+    "email" => "john@example.com",
+    "age" => 30
+];
+echo $user["email"]; // Output: john@example.com
+
+// Multidimensional arrays
+$contacts = [
+    ["name" => "John", "phone" => "1234567890"],
+    ["name" => "Jane", "phone" => "0987654321"],
+    ["name" => "Bob", "phone" => "5555555555"]
+];
+echo $contacts[1]["name"]; // Output: Jane
+
+// Common array functions
+$numbers = [3, 1, 4, 1, 5];
+sort($numbers); // Sort in ascending order
+rsort($numbers); // Sort in descending order
+count($numbers); // Count elements
