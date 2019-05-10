@@ -188,3 +188,22 @@ foreach ($person as $key => $value) {
 }
 
 // Loop control
+for ($i = 1; $i <= 10; $i++) {
+    if ($i == 3) continue; // Skip this iteration
+    if ($i == 8) break; // Exit the loop
+    echo $i;
+}
+
+// ====================================
+// FUNCTIONS
+// ====================================
+
+// Basic function
+function sayHello() {
+    echo "Hello!";
+}
+sayHello(); // Call the function
+
+// Function with parameters
+function greet($name) {
+    echo "Hello, $name!";
