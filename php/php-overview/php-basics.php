@@ -207,3 +207,22 @@ sayHello(); // Call the function
 // Function with parameters
 function greet($name) {
     echo "Hello, $name!";
+}
+greet("Maria"); // Output: Hello, Maria!
+
+// Function with default parameter
+function greetPerson($name = "Guest") {
+    echo "Hello, $name!";
+}
+greetPerson(); // Output: Hello, Guest!
+greetPerson("Alex"); // Output: Hello, Alex!
+
+// Return values
+function add($a, $b) {
+    return $a + $b;
+}
+$sum = add(5, 3); // $sum = 8
+
+// Type declarations (PHP 7+)
+function multiply(int $a, int $b): int {
+    return $a * $b;
