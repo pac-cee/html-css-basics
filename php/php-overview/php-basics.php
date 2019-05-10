@@ -283,3 +283,22 @@ $numbers = [3, 1, 4, 1, 5];
 sort($numbers); // Sort in ascending order
 rsort($numbers); // Sort in descending order
 count($numbers); // Count elements
+array_push($numbers, 9); // Add to end
+array_pop($numbers); // Remove from end
+array_unshift($numbers, 0); // Add to beginning
+array_shift($numbers); // Remove from beginning
+array_sum($numbers); // Sum of elements
+in_array(3, $numbers); // Check if value exists
+array_key_exists("name", $user); // Check if key exists
+
+// ====================================
+// FORM HANDLING
+// ====================================
+
+// Handling GET requests
+// URL: page.php?name=John&age=25
+$name = $_GET["name"] ?? ""; // Using null coalescing operator
+$age = $_GET["age"] ?? 0;
+
+// Handling POST requests
+// <form method="post" action="process.php">
