@@ -245,3 +245,22 @@ addFive($value); // $value becomes 15
 $multiply = function($a, $b) {
     return $a * $b;
 };
+echo $multiply(4, 5); // Output: 20
+
+// Arrow functions (PHP 7.4+)
+$multiply = fn($a, $b) => $a * $b;
+
+// ====================================
+// ARRAYS
+// ====================================
+
+// Indexed arrays
+$fruits = ["Apple", "Banana", "Cherry"];
+echo $fruits[0]; // Output: Apple
+
+// Creating arrays
+$numbers = array(1, 2, 3, 4, 5); // Traditional way
+$colors = ["Red", "Green", "Blue"]; // Short syntax (PHP 5.4+)
+
+// Associative arrays (key-value pairs)
+$user = [
