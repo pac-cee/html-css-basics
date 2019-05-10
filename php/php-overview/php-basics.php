@@ -226,3 +226,22 @@ $sum = add(5, 3); // $sum = 8
 // Type declarations (PHP 7+)
 function multiply(int $a, int $b): int {
     return $a * $b;
+}
+
+// Variable-length parameter lists
+function sum(...$numbers) {
+    return array_sum($numbers);
+}
+echo sum(1, 2, 3, 4); // Output: 10
+
+// Passing by reference
+function addFive(&$num) {
+    $num += 5;
+}
+$value = 10;
+addFive($value); // $value becomes 15
+
+// Anonymous functions (closures)
+$multiply = function($a, $b) {
+    return $a * $b;
+};
