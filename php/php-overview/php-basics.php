@@ -321,3 +321,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Please enter a valid email address";
     }
 }
+
+// File uploads
+if (isset($_FILES["upload"])) {
+    $fileName = $_FILES["upload"]["name"];
+    $tempPath = $_FILES["upload"]["tmp_name"];
+    $fileSize = $_FILES["upload"]["size"];
+    $fileType = $_FILES["upload"]["type"];
+    $error = $_FILES["upload"]["error"];
+    
+    // Check for errors
+    if ($error === 0) {
+        // Move the file to a permanent location
+        move_uploaded_file($tempPath, "uploads/" . $fileName);
+        echo "File uploaded successfully!";
+    }
+}
+
+// Form security
+// Prevent XSS (Cross-Site Scripting)
