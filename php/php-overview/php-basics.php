@@ -302,3 +302,22 @@ $age = $_GET["age"] ?? 0;
 
 // Handling POST requests
 // <form method="post" action="process.php">
+//   <input type="text" name="username">
+//   <input type="password" name="password">
+//   <button type="submit">Submit</button>
+// </form>
+$username = $_POST["username"] ?? "";
+$password = $_POST["password"] ?? "";
+
+// Processing form submissions
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Form was submitted
+    $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+    if ($email) {
+        // Valid email
+        echo "Thank you for submitting: $email";
+    } else {
+        // Invalid email
+        echo "Please enter a valid email address";
+    }
+}
