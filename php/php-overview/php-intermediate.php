@@ -55,3 +55,22 @@ EOT;
 $a = "hello";
 $b = "hello";
 var_dump($a == $b); // Equality check
+var_dump(strcmp($a, $b)); // Returns 0 if equal
+var_dump(strcasecmp($a, strtoupper($b))); // Case-insensitive comparison
+
+// ====================================
+// DATE AND TIME HANDLING
+// ====================================
+
+// Getting current time
+echo time(); // Unix timestamp (seconds since Jan 1, 1970)
+echo microtime(true); // Unix timestamp with microseconds
+
+// Creating dates
+$date = date("Y-m-d H:i:s"); // Formatted current date and time
+$date = date("F j, Y, g:i a"); // e.g. March 10, 2023, 5:16 pm
+
+// Date formats
+// Y - Four digit year (e.g. 2023)
+// y - Two digit year (e.g. 23)
+// m - Month with leading zeros (01-12)
