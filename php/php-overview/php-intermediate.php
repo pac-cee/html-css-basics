@@ -36,3 +36,22 @@ $name = "John";
 echo "Hello, $name!"; // Variables inside double quotes are parsed
 echo 'Hello, $name!'; // Variables inside single quotes are not parsed
 echo "Array element: {$array['key']}"; // Complex expressions need curly braces
+
+// Heredoc (variables are parsed)
+$text = <<<EOT
+This is a multi-line string
+using heredoc syntax.
+Hello, $name!
+EOT;
+
+// Nowdoc (variables are not parsed, PHP 5.3+)
+$text = <<<'EOT'
+This is a multi-line string
+using nowdoc syntax.
+Hello, $name! (not parsed)
+EOT;
+
+// String comparison
+$a = "hello";
+$b = "hello";
+var_dump($a == $b); // Equality check
