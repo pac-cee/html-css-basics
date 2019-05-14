@@ -74,3 +74,22 @@ $date = date("F j, Y, g:i a"); // e.g. March 10, 2023, 5:16 pm
 // Y - Four digit year (e.g. 2023)
 // y - Two digit year (e.g. 23)
 // m - Month with leading zeros (01-12)
+// n - Month without leading zeros (1-12)
+// F - Full month name (e.g. January)
+// M - Short month name (e.g. Jan)
+// d - Day with leading zeros (01-31)
+// j - Day without leading zeros (1-31)
+// D - Short day name (e.g. Mon)
+// l - Full day name (e.g. Monday)
+// H - 24-hour format with leading zeros (00-23)
+// h - 12-hour format with leading zeros (01-12)
+// i - Minutes with leading zeros (00-59)
+// s - Seconds with leading zeros (00-59)
+// a - Lowercase am/pm
+// A - Uppercase AM/PM
+
+// Working with timestamps
+$timestamp = strtotime("next Monday");
+$timestamp = strtotime("+1 week");
+$timestamp = strtotime("2023-12-31");
+echo date("Y-m-d", $timestamp);
