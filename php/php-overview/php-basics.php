@@ -340,3 +340,12 @@ if (isset($_FILES["upload"])) {
 
 // Form security
 // Prevent XSS (Cross-Site Scripting)
+$userInput = htmlspecialchars($_POST["comment"] ?? "");
+
+// CSRF (Cross-Site Request Forgery) protection
+session_start();
+$token = md5(uniqid(rand(), true));
+$_SESSION["csrf_token"] = $token;
+// In your form: <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+// Then verify: if ($_POST["csrf_token"] == $_SESSION["csrf_token"]) { /* Process form */ }
+?>
