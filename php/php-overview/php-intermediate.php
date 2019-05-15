@@ -112,3 +112,22 @@ $date->sub($interval);
 
 // Date differences
 $date1 = new DateTime("2023-01-01");
+$date2 = new DateTime("2024-06-15");
+$diff = $date1->diff($date2);
+echo "Difference: " . $diff->y . " years, " . $diff->m . " months, " . $diff->d . " days";
+
+// Timezone handling
+date_default_timezone_set("America/New_York");
+$date = new DateTime();
+$date->setTimezone(new DateTimeZone("Europe/London"));
+
+// ====================================
+// ERROR HANDLING
+// ====================================
+
+// Error reporting settings
+error_reporting(E_ALL); // Report all errors
+error_reporting(E_ALL & ~E_NOTICE); // All errors except notices
+ini_set('display_errors', 1); // Display errors (for development)
+ini_set('display_errors', 0); // Hide errors (for production)
+
