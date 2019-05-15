@@ -169,3 +169,22 @@ try {
     echo "Invalid argument: " . $e->getMessage();
 } catch (RuntimeException $e) {
     echo "Runtime error: " . $e->getMessage();
+} catch (Exception $e) {
+    echo "General exception: " . $e->getMessage();
+}
+
+// Creating custom exceptions
+class DatabaseException extends Exception {
+    public function errorMessage() {
+        return "Database error: " . $this->getMessage();
+    }
+}
+
+try {
+    throw new DatabaseException("Connection failed");
+} catch (DatabaseException $e) {
+    echo $e->errorMessage();
+}
+
+// ====================================
+// FILE SYSTEM OPERATIONS
