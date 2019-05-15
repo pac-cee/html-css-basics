@@ -150,3 +150,22 @@ try {
 } catch (Exception $e) {
     // Handle the exception
     echo "Caught exception: " . $e->getMessage();
+    // Get stack trace
+    echo $e->getTraceAsString();
+} finally {
+    // This code always runs
+    echo "Process completed";
+}
+
+// Multiple catch blocks
+try {
+    // Code that might throw different exceptions
+    if (rand(0, 1) == 0) {
+        throw new InvalidArgumentException("Invalid argument");
+    } else {
+        throw new RuntimeException("Runtime error");
+    }
+} catch (InvalidArgumentException $e) {
+    echo "Invalid argument: " . $e->getMessage();
+} catch (RuntimeException $e) {
+    echo "Runtime error: " . $e->getMessage();
