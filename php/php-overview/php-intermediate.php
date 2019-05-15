@@ -131,3 +131,22 @@ error_reporting(E_ALL & ~E_NOTICE); // All errors except notices
 ini_set('display_errors', 1); // Display errors (for development)
 ini_set('display_errors', 0); // Hide errors (for production)
 
+// Custom error handler
+function customErrorHandler($errno, $errstr, $errfile, $errline) {
+    echo "Error [$errno] $errstr on line $errline in file $errfile";
+    // Log error to file
+    error_log("Error [$errno] $errstr on line $errline in file $errfile", 3, "error.log");
+    return true; // Prevent standard PHP error handler
+}
+set_error_handler("customErrorHandler");
+
+// Try-catch blocks
+try {
+    // Code that might throw an exception
+    $file = fopen("non_existent_file.txt", "r");
+    if (!$file) {
+        throw new Exception("Failed to open file");
+    }
+} catch (Exception $e) {
+    // Handle the exception
+    echo "Caught exception: " . $e->getMessage();
