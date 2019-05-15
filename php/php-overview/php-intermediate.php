@@ -93,3 +93,22 @@ $timestamp = strtotime("next Monday");
 $timestamp = strtotime("+1 week");
 $timestamp = strtotime("2023-12-31");
 echo date("Y-m-d", $timestamp);
+
+// DateTime object (PHP 5.2+)
+$date = new DateTime(); // Current date/time
+$date = new DateTime("2023-12-31 23:59:59");
+$date->format("Y-m-d H:i:s");
+
+// Adding/subtracting time
+$date = new DateTime();
+$date->modify("+1 day");
+$date->modify("-2 hours");
+
+// DateInterval (PHP 5.3+)
+$date = new DateTime();
+$interval = new DateInterval("P1Y2M3D"); // 1 year, 2 months, 3 days
+$date->add($interval);
+$date->sub($interval);
+
+// Date differences
+$date1 = new DateTime("2023-01-01");
