@@ -188,3 +188,22 @@ try {
 
 // ====================================
 // FILE SYSTEM OPERATIONS
+// ====================================
+
+// Reading files
+$contents = file_get_contents("example.txt"); // Read entire file
+$lines = file("example.txt"); // Read file into array (one line per element)
+
+// Reading files line by line (memory efficient)
+$handle = fopen("large_file.txt", "r");
+if ($handle) {
+    while (($line = fgets($handle)) !== false) {
+        // Process $line
+        echo $line;
+    }
+    fclose($handle);
+}
+
+// Writing to files
+file_put_contents("output.txt", "Hello World"); // Write string to file
+file_put_contents("output.txt", "More text", FILE_APPEND); // Append to file
