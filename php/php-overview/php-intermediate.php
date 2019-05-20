@@ -226,3 +226,22 @@ rename("old.txt", "new.txt"); // Rename or move a file
 unlink("file.txt"); // Delete a file
 chmod("file.txt", 0644); // Change file permissions
 
+// Directory operations
+mkdir("new_directory", 0755); // Create directory
+rmdir("old_directory"); // Remove empty directory
+chdir("../parent_directory"); // Change current directory
+getcwd(); // Get current directory
+
+// Scanning directories
+$files = scandir("directory"); // Get all files and directories
+// or
+$dir = opendir("directory");
+while (($file = readdir($dir)) !== false) {
+    echo $file . "<br>";
+}
+closedir($dir);
+
+// Recursively scanning directories
+function listAllFiles($dir) {
+    $result = [];
+    $files = scandir($dir);
