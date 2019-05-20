@@ -283,3 +283,22 @@ class DatabaseSessionHandler implements SessionHandlerInterface {
     
     public function __construct($db) {
         $this->db = $db;
+    }
+    
+    public function open($savePath, $sessionName) {
+        return true;
+    }
+    
+    public function close() {
+        return true;
+    }
+    
+    public function read($id) {
+        // Read session data from database
+        // Return session data as string
+    }
+    
+    public function write($id, $data) {
+        // Write session data to database
+    }
+    
