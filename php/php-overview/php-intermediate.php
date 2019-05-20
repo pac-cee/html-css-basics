@@ -207,3 +207,22 @@ if ($handle) {
 // Writing to files
 file_put_contents("output.txt", "Hello World"); // Write string to file
 file_put_contents("output.txt", "More text", FILE_APPEND); // Append to file
+
+// Advanced file operations
+$handle = fopen("data.txt", "w"); // "w" for write, "r" for read, "a" for append
+fwrite($handle, "Line 1\n");
+fwrite($handle, "Line 2\n");
+fclose($handle);
+
+// File and directory operations
+file_exists("example.txt"); // Check if file exists
+is_file("example.txt"); // Check if it's a file
+is_dir("directory"); // Check if it's a directory
+filesize("example.txt"); // Get file size in bytes
+filectime("example.txt"); // Creation time (as Unix timestamp)
+filemtime("example.txt"); // Modification time
+copy("source.txt", "destination.txt"); // Copy a file
+rename("old.txt", "new.txt"); // Rename or move a file
+unlink("file.txt"); // Delete a file
+chmod("file.txt", 0644); // Change file permissions
+
