@@ -245,3 +245,22 @@ closedir($dir);
 function listAllFiles($dir) {
     $result = [];
     $files = scandir($dir);
+    
+    foreach ($files as $file) {
+        if ($file === '.' || $file === '..') continue;
+        
+        $path = $dir . '/' . $file;
+        if (is_dir($path)) {
+            $result = array_merge($result, listAllFiles($path));
+        } else {
+            $result[] = $path;
+        }
+    }
+    
+    return $result;
+}
+
+// ====================================
+// SESSIONS AND COOKIES
+// ====================================
+
