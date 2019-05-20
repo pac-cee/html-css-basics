@@ -264,3 +264,22 @@ function listAllFiles($dir) {
 // SESSIONS AND COOKIES
 // ====================================
 
+// Working with sessions
+session_start(); // Initialize session
+$_SESSION["username"] = "john_doe"; // Set session variable
+$username = $_SESSION["username"] ?? "Guest"; // Get session variable
+unset($_SESSION["username"]); // Remove specific session variable
+session_unset(); // Remove all session variables
+session_destroy(); // Destroy the session
+session_regenerate_id(true); // Generate new session ID (for security)
+
+// Session configuration
+ini_set('session.cookie_lifetime', 3600); // Session cookie lifetime in seconds
+ini_set('session.gc_maxlifetime', 3600); // Session garbage collection lifetime
+
+// Custom session handler
+class DatabaseSessionHandler implements SessionHandlerInterface {
+    private $db;
+    
+    public function __construct($db) {
+        $this->db = $db;
