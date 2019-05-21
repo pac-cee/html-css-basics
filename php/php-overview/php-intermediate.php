@@ -340,3 +340,22 @@ echo $matches[1]; // Capture group: "brown"
 // Find all matches
 preg_match_all("/[a-z]{5}/", $string, $matches);
 print_r($matches[0]); // Array of all 5-letter words
+
+// Search and replace
+$newString = preg_replace("/fox/", "cat", $string);
+// Multiple replacements
+$newString = preg_replace(["/fox/", "/dog/"], ["cat", "rabbit"], $string);
+
+// Complex pattern with modifiers
+$pattern = "/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i";
+// ^ and $ match start and end of string
+// i modifier makes it case-insensitive
+if (preg_match($pattern, "user@example.com")) {
+    echo "Valid email!";
+}
+
+// Common regex modifiers
+// i - Case insensitive
+// m - Multiline (^ and $ match start/end of line)
+// s - Dot matches newlines
+// x - Ignore whitespace in pattern
