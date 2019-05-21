@@ -321,3 +321,22 @@ setcookie("user", "john", time() + 3600); // Set cookie (name, value, expiry)
 setcookie("user", "john", time() + 3600, "/", "example.com", true, true); // With path, domain, secure, httponly
 $user = $_COOKIE["user"] ?? "Guest"; // Get cookie value
 setcookie("user", "", time() - 3600); // Delete cookie by setting expiry in the past
+
+// ====================================
+// REGULAR EXPRESSIONS
+// ====================================
+
+// Pattern matching
+$string = "The quick brown fox jumps over the lazy dog";
+if (preg_match("/fox/", $string)) {
+    echo "Pattern found!";
+}
+
+// Pattern matching with capture groups
+preg_match("/quick (.*?) fox/", $string, $matches);
+echo $matches[0]; // Full match: "quick brown fox"
+echo $matches[1]; // Capture group: "brown"
+
+// Find all matches
+preg_match_all("/[a-z]{5}/", $string, $matches);
+print_r($matches[0]); // Array of all 5-letter words
