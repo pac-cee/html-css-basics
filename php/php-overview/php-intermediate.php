@@ -302,3 +302,22 @@ class DatabaseSessionHandler implements SessionHandlerInterface {
         // Write session data to database
     }
     
+    public function destroy($id) {
+        // Delete session data from database
+    }
+    
+    public function gc($maxlifetime) {
+        // Delete expired sessions from database
+    }
+}
+
+// To use custom session handler:
+// $handler = new DatabaseSessionHandler($db);
+// session_set_save_handler($handler, true);
+// session_start();
+
+// Working with cookies
+setcookie("user", "john", time() + 3600); // Set cookie (name, value, expiry)
+setcookie("user", "john", time() + 3600, "/", "example.com", true, true); // With path, domain, secure, httponly
+$user = $_COOKIE["user"] ?? "Guest"; // Get cookie value
+setcookie("user", "", time() - 3600); // Delete cookie by setting expiry in the past
