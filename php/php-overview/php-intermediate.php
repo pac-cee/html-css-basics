@@ -359,3 +359,22 @@ if (preg_match($pattern, "user@example.com")) {
 // m - Multiline (^ and $ match start/end of line)
 // s - Dot matches newlines
 // x - Ignore whitespace in pattern
+// u - Unicode support
+
+// Common regex patterns
+$patterns = [
+    'email' => "/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i",
+    'url' => "/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/",
+    'ip' => "/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/",
+    'date' => "/^([0-9]{4})-([0-9]{2})-([0-9]{2})$/" // YYYY-MM-DD
+];
+
+// ====================================
+// OBJECT-ORIENTED PROGRAMMING BASICS
+// ====================================
+
+// Class definition
+class User {
+    // Properties (class variables)
+    public $username;
+    private $password;
