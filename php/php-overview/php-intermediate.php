@@ -416,3 +416,22 @@ class User {
     
     // Setter method
     public function setEmail($email) {
+        $this->email = $email;
+    }
+    
+    // Static method
+    public static function getUserCount() {
+        return self::$userCount;
+    }
+}
+
+// Using the class
+$user = new User("john_doe", "secret123", "john@example.com");
+echo $user->username; // Public property access
+echo $user->getEmail(); // Access protected property via getter
+$user->setEmail("new_email@example.com"); // Set protected property via setter
+echo User::$userCount; // Access static property
+echo User::getUserCount(); // Call static method
+echo User::STATUS_ACTIVE; // Access constant
+
+// Inheritance
