@@ -397,3 +397,22 @@ class User {
     public function __destruct() {
         // Clean up code
         self::$userCount--;
+    }
+    
+    // Private method
+    private function hashPassword($password) {
+        return password_hash($password, PASSWORD_DEFAULT);
+    }
+    
+    // Public method
+    public function verifyPassword($password) {
+        return password_verify($password, $this->password);
+    }
+    
+    // Getter method
+    public function getEmail() {
+        return $this->email;
+    }
+    
+    // Setter method
+    public function setEmail($email) {
