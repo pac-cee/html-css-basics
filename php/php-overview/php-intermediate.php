@@ -378,3 +378,22 @@ class User {
     // Properties (class variables)
     public $username;
     private $password;
+    protected $email;
+    public static $userCount = 0;
+    
+    // Constants
+    const STATUS_ACTIVE = 'active';
+    const STATUS_INACTIVE = 'inactive';
+    
+    // Constructor
+    public function __construct($username, $password, $email) {
+        $this->username = $username;
+        $this->password = $this->hashPassword($password);
+        $this->email = $email;
+        self::$userCount++; // Access static property
+    }
+    
+    // Destructor
+    public function __destruct() {
+        // Clean up code
+        self::$userCount--;
