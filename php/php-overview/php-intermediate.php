@@ -454,3 +454,22 @@ class Admin extends User {
 }
 
 // Abstract classes and methods
+abstract class Vehicle {
+    protected $brand;
+    
+    public function __construct($brand) {
+        $this->brand = $brand;
+    }
+    
+    // Abstract method (must be implemented by child classes)
+    abstract public function calculateMileage();
+    
+    // Regular method
+    public function getBrand() {
+        return $this->brand;
+    }
+}
+
+class Car extends Vehicle {
+    private $fuel;
+    private $distance;
