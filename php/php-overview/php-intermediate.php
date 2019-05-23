@@ -435,3 +435,22 @@ echo User::getUserCount(); // Call static method
 echo User::STATUS_ACTIVE; // Access constant
 
 // Inheritance
+class Admin extends User {
+    private $role;
+    
+    public function __construct($username, $password, $email, $role) {
+        parent::__construct($username, $password, $email); // Call parent constructor
+        $this->role = $role;
+    }
+    
+    public function getRole() {
+        return $this->role;
+    }
+    
+    // Override parent method
+    public function getEmail() {
+        return "Admin email: " . parent::getEmail(); // Call parent method
+    }
+}
+
+// Abstract classes and methods
