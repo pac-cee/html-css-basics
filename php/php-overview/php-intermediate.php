@@ -492,3 +492,22 @@ interface PaymentProcessor {
     public function refundPayment($transactionId);
 }
 
+class StripeProcessor implements PaymentProcessor {
+    public function processPayment($amount) {
+        // Implementation
+        return "Stripe payment of $amount processed";
+    }
+    
+    public function refundPayment($transactionId) {
+        // Implementation
+        return "Stripe payment $transactionId refunded";
+    }
+}
+
+class PayPalProcessor implements PaymentProcessor {
+    public function processPayment($amount) {
+        // Implementation
+        return "PayPal payment of $amount processed";
+    }
+    
+    public function refundPayment($transactionId) {
