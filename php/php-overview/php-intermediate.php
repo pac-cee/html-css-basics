@@ -473,3 +473,22 @@ abstract class Vehicle {
 class Car extends Vehicle {
     private $fuel;
     private $distance;
+    
+    public function __construct($brand, $fuel, $distance) {
+        parent::__construct($brand);
+        $this->fuel = $fuel;
+        $this->distance = $distance;
+    }
+    
+    // Implement abstract method
+    public function calculateMileage() {
+        return $this->distance / $this->fuel;
+    }
+}
+
+// Interfaces
+interface PaymentProcessor {
+    public function processPayment($amount);
+    public function refundPayment($transactionId);
+}
+
