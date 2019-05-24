@@ -549,3 +549,22 @@ class MagicDemo {
     // Called when accessing inaccessible or non-existent properties
     public function __get($name) {
         return $this->data[$name] ?? null;
+    }
+    
+    // Called when writing to inaccessible or non-existent properties
+    public function __set($name, $value) {
+        $this->data[$name] = $value;
+    }
+    
+    // Called when checking if inaccessible or non-existent properties isset() or empty()
+    public function __isset($name) {
+        return isset($this->data[$name]);
+    }
+    
+    // Called when unset() is used on inaccessible or non-existent properties
+    public function __unset($name) {
+        unset($this->data[$name]);
+    }
+    
+    // Called when object is used as a string
+    public function __toString() {
