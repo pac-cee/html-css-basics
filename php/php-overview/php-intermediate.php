@@ -511,3 +511,22 @@ class PayPalProcessor implements PaymentProcessor {
     }
     
     public function refundPayment($transactionId) {
+        // Implementation
+        return "PayPal payment $transactionId refunded";
+    }
+}
+
+// Traits (PHP 5.4+)
+trait Loggable {
+    protected function log($message) {
+        echo "[" . date("Y-m-d H:i:s") . "] " . $message;
+    }
+}
+
+trait Debuggable {
+    public function debug($data) {
+        echo "<pre>";
+        var_dump($data);
+        echo "</pre>";
+    }
+}
