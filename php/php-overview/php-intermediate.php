@@ -530,3 +530,22 @@ trait Debuggable {
         echo "</pre>";
     }
 }
+
+class ApiClient {
+    use Loggable, Debuggable; // Use multiple traits
+    
+    public function request($url) {
+        $this->log("Requesting: $url");
+        $data = file_get_contents($url);
+        $this->debug($data);
+        return $data;
+    }
+}
+
+// Magic methods
+class MagicDemo {
+    private $data = [];
+    
+    // Called when accessing inaccessible or non-existent properties
+    public function __get($name) {
+        return $this->data[$name] ?? null;
