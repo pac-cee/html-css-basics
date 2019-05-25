@@ -625,3 +625,14 @@ use App\Services\{UserService, ProductService, OrderService};
 // Sub-namespaces
 namespace App\Services\Auth;
 
+class AuthService {
+    // ...
+}
+
+// Global namespace
+namespace {
+    // Global code
+    $obj = new \App\Services\UserService();
+}
+
+// ====================================
