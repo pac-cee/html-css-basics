@@ -587,3 +587,22 @@ class MagicDemo {
         return ['data'];
     }
     
+    // Called after unserialization
+    public function __wakeup() {
+        // Restore any resources or connections
+    }
+}
+
+// ====================================
+// NAMESPACES
+// ====================================
+
+// Define a namespace (should be at the top of the file)
+namespace App\Services;
+
+// Define class in namespace
+class UserService {
+    public function getUsers() {
+        return "Getting users...";
+    }
+}
