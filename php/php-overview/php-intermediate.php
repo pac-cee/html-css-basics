@@ -606,3 +606,22 @@ class UserService {
         return "Getting users...";
     }
 }
+
+// Using classes from namespaces
+$userService = new \App\Services\UserService();
+echo $userService->getUsers();
+
+// Importing namespaces with use
+use App\Services\UserService;
+$userService = new UserService();
+
+// Importing with alias
+use App\Services\UserService as US;
+$userService = new US();
+
+// Importing multiple classes
+use App\Services\{UserService, ProductService, OrderService};
+
+// Sub-namespaces
+namespace App\Services\Auth;
+
