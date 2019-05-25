@@ -568,3 +568,22 @@ class MagicDemo {
     
     // Called when object is used as a string
     public function __toString() {
+        return json_encode($this->data);
+    }
+    
+    // Called when object is used as a function
+    public function __invoke($arg) {
+        return "Invoked with: $arg";
+    }
+    
+    // Called when cloning an object
+    public function __clone() {
+        // Modify properties if needed after cloning
+    }
+    
+    // Called after serialization
+    public function __sleep() {
+        // Return array of property names to serialize
+        return ['data'];
+    }
+    
