@@ -93,3 +93,22 @@ header('Content-Type: text/xml');
 echo $xml->asXML();
 // Or save to file
 $xml->asXML('user.xml');
+
+// Reading XML with SimpleXML
+$xml = simplexml_load_file('user.xml');
+// Or from string
+$xml = simplexml_load_string($xmlString);
+
+// Accessing XML data
+echo $xml->user->name; // John Doe
+echo $xml->user['id']; // 123
+
+// Looping through elements
+foreach ($xml->user->skills->skill as $skill) {
+    echo $skill . "<br>";
+}
+
+// Converting XML to array
+$xmlArray = json_decode(json_encode($xml), true);
+
+// Namespaces in XML
