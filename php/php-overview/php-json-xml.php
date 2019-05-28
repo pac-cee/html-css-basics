@@ -74,3 +74,22 @@ class MyListener implements JsonStreamingParser\Listener {
 // XML HANDLING
 // ====================================
 
+// Creating XML with SimpleXML
+$xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><root></root>');
+
+// Adding elements and attributes
+$user = $xml->addChild('user');
+$user->addChild('name', 'John Doe');
+$user->addChild('email', 'john@example.com');
+$user->addAttribute('id', '123');
+
+$skills = $user->addChild('skills');
+$skills->addChild('skill', 'PHP');
+$skills->addChild('skill', 'JavaScript');
+$skills->addChild('skill', 'MySQL');
+
+// Output the XML
+header('Content-Type: text/xml');
+echo $xml->asXML();
+// Or save to file
+$xml->asXML('user.xml');
