@@ -55,3 +55,22 @@ if (json_last_error() !== JSON_ERROR_NONE) {
 $jsonFile = fopen("large_data.json", "r");
 $jsonDecoder = new JsonStreamingParser\Parser($jsonFile, new MyListener());
 $jsonDecoder->parse();
+fclose($jsonFile);
+
+// Example listener class (needs JsonStreamingParser library)
+class MyListener implements JsonStreamingParser\Listener {
+    public function startDocument() {}
+    public function endDocument() {}
+    public function startObject() {}
+    public function endObject() {}
+    public function startArray() {}
+    public function endArray() {}
+    public function key($key) {}
+    public function value($value) {}
+    public function whitespace($whitespace) {}
+}
+
+// ====================================
+// XML HANDLING
+// ====================================
+
