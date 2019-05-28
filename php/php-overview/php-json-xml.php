@@ -36,3 +36,22 @@ $jsonOptions = json_encode($data, JSON_PRETTY_PRINT | JSON_HEX_TAG | JSON_UNESCA
 // JSON_FORCE_OBJECT - Force {} notation instead of [] for empty arrays
 
 // Decoding JSON to PHP
+$jsonString = '{"name":"John Doe","age":30,"active":true,"skills":["PHP","JavaScript","MySQL"]}';
+$phpArray = json_decode($jsonString, true); // true = return as associative array
+$phpObject = json_decode($jsonString); // false/omitted = return as object
+
+// Accessing decoded data
+echo $phpArray["name"]; // Array access
+echo $phpObject->name; // Object access
+
+// Checking for JSON errors
+$jsonString = '{invalid json}';
+$data = json_decode($jsonString);
+if (json_last_error() !== JSON_ERROR_NONE) {
+    echo "JSON Error: " . json_last_error_msg();
+}
+
+// JSON streams (for large data)
+$jsonFile = fopen("large_data.json", "r");
+$jsonDecoder = new JsonStreamingParser\Parser($jsonFile, new MyListener());
+$jsonDecoder->parse();
