@@ -112,3 +112,22 @@ foreach ($xml->user->skills->skill as $skill) {
 $xmlArray = json_decode(json_encode($xml), true);
 
 // Namespaces in XML
+$xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:ns1="http://example.com/ns1" xmlns:ns2="http://example.com/ns2"></root>');
+
+$ns1Element = $xml->addChild('ns1:element', 'value', 'http://example.com/ns1');
+$ns1Element->addAttribute('ns2:attr', 'attribute value', 'http://example.com/ns2');
+
+// Access namespaced elements
+$ns1 = $xml->children('http://example.com/ns1');
+echo $ns1->element;
+
+// XPath with SimpleXML
+$result = $xml->xpath('//ns1:element');
+foreach ($result as $element) {
+    echo $element;
+}
+
+// DOM XML (more powerful but more complex)
+$dom = new DOMDocument('1.0', 'UTF-8');
+$dom->formatOutput = true; // Pretty-print
