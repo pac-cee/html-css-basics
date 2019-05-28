@@ -131,3 +131,22 @@ foreach ($result as $element) {
 // DOM XML (more powerful but more complex)
 $dom = new DOMDocument('1.0', 'UTF-8');
 $dom->formatOutput = true; // Pretty-print
+
+// Create elements
+$root = $dom->createElement('root');
+$dom->appendChild($root);
+
+$user = $dom->createElement('user');
+$root->appendChild($user);
+
+$name = $dom->createElement('name', 'John Doe');
+$user->appendChild($name);
+
+// Create attributes
+$idAttr = $dom->createAttribute('id');
+$idAttr->value = '123';
+$user->appendChild($idAttr);
+
+// Output the XML
+echo $dom->saveXML();
+// Or save to file
