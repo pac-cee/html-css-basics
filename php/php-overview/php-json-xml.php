@@ -207,3 +207,13 @@ $client = new SoapClient('http://example.com/service.wsdl');
 $result = $client->functionName(['param1' => 'value1']);
 
 // Creating a SOAP server
+class MyService {
+    public function hello($name) {
+        return "Hello, $name!";
+    }
+}
+
+$server = new SoapServer('service.wsdl');
+$server->setClass('MyService');
+$server->handle();
+?>
