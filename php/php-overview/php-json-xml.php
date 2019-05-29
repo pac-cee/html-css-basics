@@ -150,3 +150,22 @@ $user->appendChild($idAttr);
 // Output the XML
 echo $dom->saveXML();
 // Or save to file
+$dom->save('user.xml');
+
+// Reading with DOM
+$dom = new DOMDocument();
+$dom->load('user.xml'); // From file
+// Or from string
+$dom->loadXML($xmlString);
+
+// Get elements by tag name
+$users = $dom->getElementsByTagName('user');
+foreach ($users as $user) {
+    echo $user->getElementsByTagName('name')->item(0)->nodeValue;
+    echo $user->getAttribute('id');
+}
+
+// XPath with DOM
+$xpath = new DOMXPath($dom);
+$result = $xpath->query('//user[@id="123"]');
+foreach ($result as $node) {
