@@ -17,3 +17,14 @@ return [
             PDO::ATTR_EMULATE_PREPARES => false,
             PDO::ATTR_STRINGIFY_FETCHES => false
         ]
+    ],
+    
+    'postgres' => [
+        'host' => getenv('DB_PGSQL_HOST') ?: 'localhost',
+        'port' => getenv('DB_PGSQL_PORT') ?: 5432,
+        'database' => getenv('DB_PGSQL_NAME') ?: 'mydb',
+        'username' => getenv('DB_PGSQL_USER') ?: 'postgres',
+        'password' => getenv('DB_PGSQL_PASS') ?: 'postgres-pw',
+        'sslmode' => 'prefer'
+    ]
+];
