@@ -188,3 +188,22 @@ $reader->open('large.xml');
 while ($reader->read()) {
     if ($reader->nodeType == XMLReader::ELEMENT && $reader->name == 'user') {
         $node = $reader->expand();
+        $dom = new DOMDocument();
+        $dom->appendChild($dom->importNode($node, true));
+        
+        // Process each user node
+        $user = simplexml_import_dom($dom->documentElement);
+        echo $user->name . "<br>";
+        
+        // Free memory
+        $dom = null;
+        $user = null;
+    }
+}
+$reader->close();
+
+// XML and web services (SOAP)
+$client = new SoapClient('http://example.com/service.wsdl');
+$result = $client->functionName(['param1' => 'value1']);
+
+// Creating a SOAP server
