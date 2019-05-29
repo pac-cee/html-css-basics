@@ -169,3 +169,22 @@ foreach ($users as $user) {
 $xpath = new DOMXPath($dom);
 $result = $xpath->query('//user[@id="123"]');
 foreach ($result as $node) {
+    echo $node->nodeValue;
+}
+
+// XML validation with schema
+$dom = new DOMDocument();
+$dom->load('data.xml');
+if ($dom->schemaValidate('schema.xsd')) {
+    echo "XML is valid according to schema";
+} else {
+    echo "XML is not valid according to schema";
+}
+
+// Working with large XML files (XMLReader)
+$reader = new XMLReader();
+$reader->open('large.xml');
+
+while ($reader->read()) {
+    if ($reader->nodeType == XMLReader::ELEMENT && $reader->name == 'user') {
+        $node = $reader->expand();
