@@ -17,3 +17,15 @@ trait Logger {
 class DataProcessor {
     use Logger;
 
+    public function process(callable $callback): void {
+        $this->log("Processing started");
+        $callback();
+        $this->log("Processing completed");
+    }
+}
+
+// Usage
+$processor = new DataProcessor();
+$processor->process(function() {
+    echo "Performing complex data operations...";
+});
