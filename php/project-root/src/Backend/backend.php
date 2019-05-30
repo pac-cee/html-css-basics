@@ -17,3 +17,15 @@ switch ($request) {
             echo json_encode(['users' => [/* Data from DB */]]);
         }
         break;
+        
+    case '/api/login':
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Handle authentication
+            echo json_encode(['token' => 'sample_jwt_token']);
+        }
+        break;
+
+    default:
+        http_response_code(404);
+        echo json_encode(['error' => 'Endpoint not found']);
+}
