@@ -17,3 +17,9 @@ class PostgresConnection {
             die("PostgreSQL Connection Failed: " . $e->getMessage());
         }
     }
+
+    public function insertData(array $data): bool {
+        $stmt = $this->pdo->prepare("INSERT INTO logs (message) VALUES (?)");
+        return $stmt->execute([json_encode($data)]);
+    }
+}
