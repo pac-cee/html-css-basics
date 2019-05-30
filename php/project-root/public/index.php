@@ -17,3 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 <!DOCTYPE html>
+<html>
+<head>
+    <title>PHP Frontend</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="text" name="username" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <?php if(isset($username)): ?>
+        <p>Welcome, <?= $username ?>!</p>
+    <?php endif; ?>
+</body>
+</html>
