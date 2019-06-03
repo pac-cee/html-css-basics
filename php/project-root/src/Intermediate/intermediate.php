@@ -17,3 +17,13 @@ class Calculator {
     public function getResult(): float {
         return $this->result;
     }
+}
+
+// Usage
+try {
+    $calc = new Calculator();
+    echo "Result: " . $calc->add(5)->add(3.5)->getResult();
+} catch (TypeError $e) {
+    error_log("Calculation error: " . $e->getMessage());
+    echo "Invalid input provided!";
+}
