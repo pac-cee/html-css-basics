@@ -17,3 +17,22 @@ function validateInputs() {
     }
 
     if (finalExam < 0 || finalExam > 40) {
+        alert('Final Exam marks must be between 0 and 40');
+        document.getElementById('finalExam').value = '';
+        return null;
+    }
+
+    return { courseWorks, midTerm, finalExam };
+}
+
+function calculateTotal() {
+    const marks = validateInputs();
+    if (!marks) return;
+
+    const totalMarks = marks.courseWorks + marks.midTerm + marks.finalExam;
+    document.getElementById('total').value = totalMarks;
+    return totalMarks;
+}
+
+function calculateAverage() {
+    const totalMarks = calculateTotal();
