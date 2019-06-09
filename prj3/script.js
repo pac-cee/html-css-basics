@@ -93,3 +93,16 @@ function calculateMarks() {
     document.getElementById('average').value = average.toFixed(2);
     
     // Determine grade using a more maintainable approach
+    const gradeRanges = [
+        { min: 70, max: 100, grade: "A" },
+        { min: 60, max: 69, grade: "B" },
+        { min: 50, max: 59, grade: "C" },
+        { min: 0, max: 49, grade: "Failed" }
+    ];
+    
+    const grade = gradeRanges.find(range => 
+        totalMarks >= range.min && totalMarks <= range.max
+    )?.grade || "Failed";
+    
+    document.getElementById('grade').value = grade;
+} */
