@@ -36,3 +36,22 @@ body{
     width: 100%;
     background-color: white;
     height: 100px;
+}
+
+.table3 h3 {
+    color: white;
+    background-color: black;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.table3 p{
+    font-size: 12px;
+}
+
+.table3 .td2{
+    background-image: url('pic4.jpeg');
+}
+
