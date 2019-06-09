@@ -74,3 +74,22 @@ function calculateMarks() {
     const inputs = {};
     for (const [fieldId, rules] of Object.entries(validationRules)) {
         const value = parseFloat(document.getElementById(fieldId).value) || 0;
+        
+        if (value < rules.min || value > rules.max) {
+            alert(`${fieldId.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())} marks must be between ${rules.min} and ${rules.max}`);
+            document.getElementById(fieldId).value = '';
+            return;
+        }
+        
+        inputs[fieldId] = value;
+    }
+    
+    // Calculate total marks
+    const totalMarks = Object.values(inputs).reduce((sum, value) => sum + value, 0);
+    document.getElementById('total').value = totalMarks;
+    
+    // Calculate average (dividing by number of assignments, not hardcoded 3)
+    const average = totalMarks / Object.keys(inputs).length;
+    document.getElementById('average').value = average.toFixed(2);
+    
+    // Determine grade using a more maintainable approach
