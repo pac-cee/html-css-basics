@@ -36,3 +36,22 @@ function calculateTotal() {
 
 function calculateAverage() {
     const totalMarks = calculateTotal();
+    if (!totalMarks) return;
+
+    const average = totalMarks / 3;
+    document.getElementById('average').value = average.toFixed(2);
+    return average;
+}
+
+function calculateGrade() {
+    const totalMarks = calculateTotal();
+    if (!totalMarks) return;
+
+    let grade;
+    if (totalMarks >= 70 && totalMarks <= 100) {
+        grade = "A";
+    } else if (totalMarks >= 60 && totalMarks < 70) {
+        grade = "B";
+    } else if (totalMarks >= 50 && totalMarks < 60) {
+        grade = "C";
+    } else {
