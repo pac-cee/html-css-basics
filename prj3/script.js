@@ -55,3 +55,22 @@ function calculateGrade() {
     } else if (totalMarks >= 50 && totalMarks < 60) {
         grade = "C";
     } else {
+        grade = "Failed";
+    }
+    document.getElementById('grade').value = grade;
+    return grade;
+}
+
+/*
+function calculateMarks() {
+    // Define validation rules for each input field
+    const validationRules = {
+        courseWorks: { min: 0, max: 30 },
+        midTerm: { min: 0, max: 30 },
+        finalExam: { min: 0, max: 40 }
+    };
+    
+    // Get and validate all input values
+    const inputs = {};
+    for (const [fieldId, rules] of Object.entries(validationRules)) {
+        const value = parseFloat(document.getElementById(fieldId).value) || 0;
