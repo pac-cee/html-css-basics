@@ -17,3 +17,22 @@ class PensionController {
             'message' => '',
             'data' => null
         ];
+
+        try {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                if (isset($_POST['calculate'])) {
+                    $response = $this->handleCalculation($_POST);
+                } elseif (isset($_POST['submit'])) {
+                    $response = $this->handleSubmission($_POST);
+                } elseif (isset($_POST['retrieve'])) {
+                    $response = $this->handleRetrieval($_POST);
+                } elseif (isset($_POST['delete'])) {
+                    $response = $this->handleDeletion($_POST);
+                }
+            }
+        } catch (Exception $e) {
+            $response['message'] = "Error: " . $e->getMessage();
+        }
+
+        return $response;
+    }
