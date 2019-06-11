@@ -36,3 +36,22 @@ if(isset($_POST['calculate'])) {
     if(empty($employName) || empty($employeeAddress) || $monthlySalary <= 0 || $employeePeriod <= 0 || $benefitPercentage <= 0) {
         $message = "Please fill all fields with valid values";
     } else {
+        // Calculate pension amounts
+        $totalAmount = $monthlySalary * $employeePeriod * ($benefitPercentage / 100);
+        $amountPerMonth = $totalAmount / ($employeePeriod * 12); // Monthly payment after retirement
+    }
+}
+
+// Handle data submission to database
+if(isset($_POST['submit'])) {
+    // Get form data
+    $employName = $_POST['employ_name'];
+    $employeeAddress = $_POST['employee_address'];
+    $monthlySalary = floatval($_POST['monthly_salary']);
+    $employeePeriod = intval($_POST['employee_period']);
+    $benefitPercentage = floatval($_POST['benefit_percentage']);
+    
+    // Recalculate to ensure correct values
+    $totalAmount = $monthlySalary * $employeePeriod * ($benefitPercentage / 100);
+    $amountPerMonth = $totalAmount / ($employeePeriod * 12);
+    
