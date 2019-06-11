@@ -131,3 +131,22 @@ if(isset($_POST['delete'])) {
         $stmt->bind_param("s", $searchName);
         
         // Execute the statement
+        if($stmt->execute()) {
+            if($stmt->affected_rows > 0) {
+                $message = "Record deleted successfully!";
+                // Clear form after successful deletion
+                $employName = "";
+                $employeeAddress = "";
+                $monthlySalary = 0;
+                $employeePeriod = 0;
+                $benefitPercentage = 0;
+                $totalAmount = 0;
+                $amountPerMonth = 0;
+            } else {
+                $message = "No record found for deletion with name: " . $searchName;
+            }
+        } else {
+            $message = "Error deleting record: " . $conn->error;
+        }
+        
+        $stmt->close();
