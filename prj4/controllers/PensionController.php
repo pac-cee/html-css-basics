@@ -131,3 +131,20 @@ class PensionController {
                 'success' => true,
                 'message' => 'Record deleted successfully'
             ];
+        }
+
+        return [
+            'success' => false,
+            'message' => 'No record found to delete'
+        ];
+    }
+
+    private function validateInputs($data) {
+        return !empty($data['employ_name']) && 
+               !empty($data['employee_address']) && 
+               floatval($data['monthly_salary']) > 0 && 
+               intval($data['employee_period']) > 0 && 
+               floatval($data['benefit_percentage']) > 0;
+    }
+}
+?>
