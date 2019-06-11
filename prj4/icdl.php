@@ -55,3 +55,22 @@ if(isset($_POST['submit'])) {
     $totalAmount = $monthlySalary * $employeePeriod * ($benefitPercentage / 100);
     $amountPerMonth = $totalAmount / ($employeePeriod * 12);
     
+    // Validate inputs before submission
+    if(empty($employName) || empty($employeeAddress) || $monthlySalary <= 0 || $employeePeriod <= 0 || $benefitPercentage <= 0) {
+        $message = "Please fill all fields with valid values before submitting";
+    } else {
+        // Prepare SQL statement with prepared statements to prevent SQL injection
+        $stmt = $conn->prepare("INSERT INTO pension_records (employ_name, employee_address, monthly_salary, employee_period, benefit_percentage, total_amount, amount_per_month) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssdiddd", $employName, $employeeAddress, $monthlySalary, $employeePeriod, $benefitPercentage, $totalAmount, $amountPerMonth);
+        
+        // Execute the statement
+        if($stmt->execute()) {
+            $message = "Record saved successfully!";
+            // Clear form after successful submission
+            $employName = "";
+            $employeeAddress = "";
+            $monthlySalary = 0;
+            $employeePeriod = 0;
+            $benefitPercentage = 0;
+            $totalAmount = 0;
+            $amountPerMonth = 0;
