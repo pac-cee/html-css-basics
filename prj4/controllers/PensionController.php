@@ -36,3 +36,22 @@ class PensionController {
 
         return $response;
     }
+
+    private function handleCalculation($data) {
+        if ($this->validateInputs($data)) {
+            $result = $this->calculator->calculate(
+                floatval($data['monthly_salary']),
+                intval($data['employee_period']),
+                floatval($data['benefit_percentage'])
+            );
+            return [
+                'success' => true,
+                'data' => $result,
+                'message' => 'Calculation completed successfully'
+            ];
+        }
+        return [
+            'success' => false,
+            'message' => 'Please fill all fields with valid values'
+        ];
+    }
