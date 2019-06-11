@@ -55,3 +55,22 @@ class PensionController {
             'message' => 'Please fill all fields with valid values'
         ];
     }
+
+    private function handleSubmission($data) {
+        if (!$this->validateInputs($data)) {
+            return [
+                'success' => false,
+                'message' => 'Please fill all fields with valid values'
+            ];
+        }
+
+        $calculationResult = $this->calculator->calculate(
+            floatval($data['monthly_salary']),
+            intval($data['employee_period']),
+            floatval($data['benefit_percentage'])
+        );
+
+        $saveData = [
+            'employ_name' => $data['employ_name'],
+            'employee_address' => $data['employee_address'],
+            'monthly_salary' => floatval($data['monthly_salary']),
