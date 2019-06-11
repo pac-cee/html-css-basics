@@ -74,3 +74,22 @@ if(isset($_POST['submit'])) {
             $benefitPercentage = 0;
             $totalAmount = 0;
             $amountPerMonth = 0;
+        } else {
+            $message = "Error saving record: " . $conn->error;
+        }
+        
+        // Close the statement
+        $stmt->close();
+    }
+}
+
+// Handle data retrieval
+if(isset($_POST['retrieve'])) {
+    $searchName = isset($_POST['employ_name']) ? $_POST['employ_name'] : '';
+    
+    if(empty($searchName)) {
+        $message = "Please enter an employee name to retrieve records";
+    } else {
+        // Prepare SQL statement for retrieval
+        $stmt = $conn->prepare("SELECT * FROM pension_records WHERE employ_name LIKE ?");
+        $searchParam = "%" . $searchName . "%";
