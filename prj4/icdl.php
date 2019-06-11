@@ -112,3 +112,22 @@ if(isset($_POST['retrieve'])) {
             
             $message = "Record retrieved successfully!";
         } else {
+            $message = "No records found for: " . $searchName;
+        }
+        
+        $stmt->close();
+    }
+}
+
+// Handle data deletion
+if(isset($_POST['delete'])) {
+    $searchName = isset($_POST['employ_name']) ? $_POST['employ_name'] : '';
+    
+    if(empty($searchName)) {
+        $message = "Please enter an employee name to delete records";
+    } else {
+        // Prepare SQL statement for deletion
+        $stmt = $conn->prepare("DELETE FROM pension_records WHERE employ_name = ?");
+        $stmt->bind_param("s", $searchName);
+        
+        // Execute the statement
