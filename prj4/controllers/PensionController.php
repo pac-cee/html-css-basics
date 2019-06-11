@@ -74,3 +74,22 @@ class PensionController {
             'employ_name' => $data['employ_name'],
             'employee_address' => $data['employee_address'],
             'monthly_salary' => floatval($data['monthly_salary']),
+            'employee_period' => intval($data['employee_period']),
+            'benefit_percentage' => floatval($data['benefit_percentage']),
+            'total_amount' => $calculationResult['totalAmount'],
+            'amount_per_month' => $calculationResult['amountPerMonth']
+        ];
+
+        if ($this->calculator->save($saveData)) {
+            return [
+                'success' => true,
+                'message' => 'Record saved successfully',
+                'data' => $calculationResult
+            ];
+        }
+
+        return [
+            'success' => false,
+            'message' => 'Error saving record'
+        ];
+    }
