@@ -112,3 +112,22 @@ class PensionController {
         }
 
         return [
+            'success' => false,
+            'message' => 'No record found'
+        ];
+    }
+
+    private function handleDeletion($data) {
+        if (empty($data['employ_name'])) {
+            return [
+                'success' => false,
+                'message' => 'Please enter employee name to delete'
+            ];
+        }
+
+        $affected = $this->calculator->delete($data['employ_name']);
+        if ($affected > 0) {
+            return [
+                'success' => true,
+                'message' => 'Record deleted successfully'
+            ];
