@@ -93,3 +93,22 @@ class PensionController {
             'message' => 'Error saving record'
         ];
     }
+
+    private function handleRetrieval($data) {
+        if (empty($data['employ_name'])) {
+            return [
+                'success' => false,
+                'message' => 'Please enter employee name to retrieve'
+            ];
+        }
+
+        $result = $this->calculator->retrieve($data['employ_name']);
+        if ($result) {
+            return [
+                'success' => true,
+                'data' => $result,
+                'message' => 'Record retrieved successfully'
+            ];
+        }
+
+        return [
