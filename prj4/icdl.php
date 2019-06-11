@@ -93,3 +93,22 @@ if(isset($_POST['retrieve'])) {
         // Prepare SQL statement for retrieval
         $stmt = $conn->prepare("SELECT * FROM pension_records WHERE employ_name LIKE ?");
         $searchParam = "%" . $searchName . "%";
+        $stmt->bind_param("s", $searchParam);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if($result->num_rows > 0) {
+            // Fetch the first matching record
+            $row = $result->fetch_assoc();
+            
+            // Populate form with retrieved data
+            $employName = $row['employ_name'];
+            $employeeAddress = $row['employee_address'];
+            $monthlySalary = $row['monthly_salary'];
+            $employeePeriod = $row['employee_period'];
+            $benefitPercentage = $row['benefit_percentage'];
+            $totalAmount = $row['total_amount'];
+            $amountPerMonth = $row['amount_per_month'];
+            
+            $message = "Record retrieved successfully!";
+        } else {
