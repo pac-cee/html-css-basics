@@ -302,3 +302,22 @@ if(isset($_POST['delete'])) {
             <p>ICDL Foundation is a global social enterprise committed to raising standards of digital competence in the workforce, education and society. ICDL certification is now available in more than 100 countries, across our network of more than 20,000 testing centres, delivering more than 70 million ICDL certification tests to more than 17 million people worldwide.</p>
             <a href="#">Read more</a>
         </div>
+        
+        <div class="main-content">
+            <h2>EMPLOYER PENSION MANAGEMENT SYSTEM</h2>
+            
+            <?php if(!empty($message)): ?>
+                <div class="message"><?php echo $message; ?></div>
+            <?php endif; ?>
+            
+            <form method="post" class="pension-form">
+                <div class="form-group">
+                    <label for="employ_name">EMPLOY NAME:</label>
+                    <input type="text" id="employ_name" name="employ_name" value="<?php echo htmlspecialchars($employName); ?>">
+                </div>
+                
+                <div class="form-group">
+                    <label for="employee_address">EMPLOYEE-ADDRESS:</label>
+                    <input type="text" id="employee_address" name="employee_address" value="<?php echo htmlspecialchars($employeeAddress); ?>">
+                </div>
+                
