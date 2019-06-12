@@ -169,3 +169,22 @@ if(isset($_POST['delete'])) {
             padding: 0;
         }
         .header {
+            background-color: #00a2e0;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            height: 40px;
+        }
+        .navigation {
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .navigation a {
+            color: #00a2e0;
