@@ -321,3 +321,22 @@ if(isset($_POST['delete'])) {
                     <input type="text" id="employee_address" name="employee_address" value="<?php echo htmlspecialchars($employeeAddress); ?>">
                 </div>
                 
+                <div class="form-group">
+                    <label for="monthly_salary">MONTHLY SALARY:</label>
+                    <input type="number" id="monthly_salary" name="monthly_salary" value="<?php echo $monthlySalary; ?>">
+                </div>
+                
+                <div class="form-group">
+                    <label for="employee_period">EMPLOYEE-PERIOD:</label>
+                    <input type="number" id="employee_period" name="employee_period" value="<?php echo $employeePeriod; ?>">
+                </div>
+                
+                <div class="form-group">
+                    <label for="benefit_percentage">benefit in %:</label>
+                    <input type="number" id="benefit_percentage" name="benefit_percentage" step="0.01" value="<?php echo $benefitPercentage; ?>">
+                </div>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <input type="submit" name="calculate" value="CLICK TO CALCULATE">
+                </div>
+                
