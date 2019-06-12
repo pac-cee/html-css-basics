@@ -264,3 +264,22 @@ if(isset($_POST['delete'])) {
         }
         .teal {
             background-color: #009966;
+        }
+        .purple {
+            background-color: #993399;
+        }
+        .message {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="icdl_logo.png" alt="ICDL Logo" class="logo">
+        <select>
+            <option selected>English</option>
+            <option>Français</option>
+            <option>Español</option>
+        </select>
+    </div>
