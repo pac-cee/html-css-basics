@@ -340,3 +340,22 @@ if(isset($_POST['delete'])) {
                     <input type="submit" name="calculate" value="CLICK TO CALCULATE">
                 </div>
                 
+                <div class="result-area">
+                    <label for="total_amount">TOTAL AMOUNT:</label>
+                    <textarea id="total_amount" class="result-box" readonly><?php echo number_format($totalAmount, 2); ?></textarea>
+                </div>
+                
+                <div class="result-area">
+                    <label for="amount_per_month">AMOUNT PER-MOUNTH:</label>
+                    <textarea id="amount_per_month" class="result-box" readonly><?php echo number_format($amountPerMonth, 2); ?></textarea>
+                </div>
+                
+                <div class="button-group">
+                    <input type="submit" name="submit" value="submit">
+                    <input type="submit" name="retrieve" value="retrive">
+                    <input type="submit" name="delete" value="delete">
+                </div>
+            </form>
+        </div>
+        
+        <div class="promo">
