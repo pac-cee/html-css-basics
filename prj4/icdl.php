@@ -226,3 +226,22 @@ if(isset($_POST['delete'])) {
         }
         .form-group input {
             flex: 1;
+            padding: 5px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .result-area {
+            margin-top: 20px;
+        }
+        .result-box {
+            width: 100%;
+            height: 50px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+            resize: none;
+        }
+        .programs {
+            display: flex;
