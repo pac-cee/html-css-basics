@@ -359,3 +359,22 @@ if(isset($_POST['delete'])) {
         </div>
         
         <div class="promo">
+            <img src="icdl_promo.jpg" alt="ICDL Workforce" style="width: 100%;">
+        </div>
+    </div>
+    
+    <h2 style="text-align: center;">ICDL PROGRAMERS</h2>
+    
+    <div class="programs">
+        <div class="program blue">
+            <h3>ICDL<br>DIGITAL CITIZENS</h3>
+            <p>Digital skills to access and build computer confidence</p>
+        </div>
+        <div class="program navy">
+            <h3>ICDL<br>DIGITAL CITIZENS</h3>
+            <p>Digital skills to access and build computer confidence</p>
+        </div>
+        <div class="program green">
+            <h3>ICDL<br>DIGITAL CITIZENS</h3>
+            <p>Digital skills to access and build computer confidence</p>
+        </div>
