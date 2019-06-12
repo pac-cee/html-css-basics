@@ -207,3 +207,22 @@ if(isset($_POST['delete'])) {
             padding: 20px;
             border: 1px solid #ccc;
         }
+        .promo {
+            flex: 1;
+            padding: 0;
+            margin-left: 10px;
+        }
+        .pension-form {
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+        }
+        .form-group label {
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        .form-group input {
+            flex: 1;
