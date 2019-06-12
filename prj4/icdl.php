@@ -188,3 +188,22 @@ if(isset($_POST['delete'])) {
         }
         .navigation a {
             color: #00a2e0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            margin: 20px;
+        }
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+            background-color: #00a2e0;
+            color: white;
+            margin-right: 10px;
+        }
+        .main-content {
+            flex: 2;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
