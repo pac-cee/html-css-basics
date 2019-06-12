@@ -245,3 +245,22 @@ if(isset($_POST['delete'])) {
         }
         .programs {
             display: flex;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .program {
+            flex: 1;
+            padding: 20px;
+            color: white;
+        }
+        .blue {
+            background-color: #00a2e0;
+        }
+        .navy {
+            background-color: #003366;
+        }
+        .green {
+            background-color: #006633;
+        }
+        .teal {
+            background-color: #009966;
