@@ -283,3 +283,22 @@ if(isset($_POST['delete'])) {
             <option>Español</option>
         </select>
     </div>
+    
+    <div class="navigation">
+        <a href="#">ABOUT US</a>
+        <a href="#">PROGRAMMES</a>
+        <a href="#">INDIVIDUALS</a>
+        <a href="#">SCHOOLS</a>
+        <a href="#">UNIVERSITIES</a>
+        <a href="#">TRAINING PROVIDERS</a>
+        <a href="#">EMPLOYERS</a>
+        <a href="#">PARTNERSHIPS</a>
+        <a href="#">TEST CENTERS</a>
+    </div>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h2>ICDL</h2>
+            <p>ICDL Foundation is a global social enterprise committed to raising standards of digital competence in the workforce, education and society. ICDL certification is now available in more than 100 countries, across our network of more than 20,000 testing centres, delivering more than 70 million ICDL certification tests to more than 17 million people worldwide.</p>
+            <a href="#">Read more</a>
+        </div>
