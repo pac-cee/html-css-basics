@@ -378,3 +378,14 @@ if(isset($_POST['delete'])) {
             <h3>ICDL<br>DIGITAL CITIZENS</h3>
             <p>Digital skills to access and build computer confidence</p>
         </div>
+        <div class="program teal">
+            <h3>ICDL<br>DIGITAL CITIZENS</h3>
+            <p>Digital skills to access and build computer confidence</p>
+        </div>
+        <div class="program purple">
+            <h3>ICDL<br>DIGITAL CITIZENS</h3>
+            <p>Digital skills to access and build computer confidence</p>
+        </div>
+    </div>
+</body>
+</html>
