@@ -36,3 +36,22 @@ header{
     margin-left: 10px;
 }
 .left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    padding-right: 4em;
+    padding-left: 4em;
+    background: var(--white);  /* Ensure nav background matches header */
+    color: var(--white);
+    font-size: 10px;
+    margin-bottom: 0px;
+}
+
+
+a{
+    text-decoration: none;
