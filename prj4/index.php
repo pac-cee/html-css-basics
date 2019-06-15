@@ -36,3 +36,22 @@ $message = $result['message'] ?? '';
                         <option>English</option>
                     </select>
                 </div>
+                <div class="nav-img">
+                    <img src="search-circle-white.svg" class="nav-img1 img" alt="Search">
+                    <img src="connect-circle-white.svg" class="nav-img2 img" alt="Connect">
+                </div>
+            </div>
+        </header>
+       
+    </div>
+    <div class="nav">
+            <nav>
+                <a href="">ABOUT US</a>
+                <a href="">PROGRAMMES</a>
+                <a href="">INDIVIDUALS</a>
+                <a href="">SCHOOLS</a>
+                <a href="">UNIVERSTIES</a>
+                <a href="">TRAINING PROVIDERS</a>
+                <a href="">EMPLOYERS</a>
+                <a href="">PARTNERSHIPS</a>
+                <a href="">TEST CENTERS</a>
