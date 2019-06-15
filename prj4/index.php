@@ -74,3 +74,22 @@ $message = $result['message'] ?? '';
                 <form method="post" action="">
                     <pre>           
       EMPLOY NAME: <input type="text" name="employ_name" value="<?php echo htmlspecialchars($employName); ?>" required>
+ EMPLOYEE-ADDRESS: <input type="text" name="employee_address" value="<?php echo htmlspecialchars($employeeAddress); ?>" required>
+   MONTHLY SALARY: <input type="number" name="monthly_salary" value="<?php echo $monthlySalary; ?>" required min="0">
+  EMPLOYEE-PERIOD: <input type="number" name="employee_period" value="<?php echo $employeePeriod; ?>" required min="1">
+     benefit in %: <input type="number" step="0.01" name="benefit_percentage" value="<?php echo $benefitPercentage; ?>" required min="0" max="100">
+                    </pre>
+                    <div class="CALCULATE">
+                        <button type="submit" name="calculate">CLICK TO CALCULATE</button>
+                        <label for="TOTAL">TOTAL AMOUNT:</label>
+                        <textarea name="TOTAL" id="TOTAL" readonly><?php echo number_format($totalAmount, 2); ?></textarea>
+                        <label for="PER-MONTH">AMOUNT PER-MONTH:</label>
+                        <textarea name="PER-MONTH" id="PER-MONTH" readonly><?php echo number_format($amountPerMonth, 2); ?></textarea>
+                    </div>
+                    <div id="BUTTON">
+                        <button type="submit" name="submit">Submit</button>
+                        <button type="submit" name="retrieve">Retrieve</button>
+                        <button type="submit" name="delete">Delete</button>
+                    </div>
+                </form>
+            </div>
