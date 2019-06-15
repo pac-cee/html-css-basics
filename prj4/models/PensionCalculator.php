@@ -36,3 +36,21 @@ class PensionCalculator {
     public function retrieve($employName) {
         $stmt = $this->conn->prepare("SELECT * FROM pension_records WHERE employ_name LIKE ?");
         $searchParam = "%$employName%";
+        $stmt->bind_param("s", $searchParam);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $data = $result->fetch_assoc();
+        $stmt->close();
+        return $data;
+    }
+
+    public function delete($employName) {
+        $stmt = $this->conn->prepare("DELETE FROM pension_records WHERE employ_name = ?");
+        $stmt->bind_param("s", $employName);
+        $stmt->execute();
+        $affected = $stmt->affected_rows;
+        $stmt->close();
+        return $affected;
+    }
+}
+?>
