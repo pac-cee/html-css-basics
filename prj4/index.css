@@ -112,3 +112,27 @@ h3,h2,h4,h5,h6{
 }
 .div1{
     background: var(--blue);
+    padding: 10px;
+    
+}
+.div2{
+    background: rgb(6, 37, 133);
+    padding: 10px;
+}
+.div3{
+    background: rgb(3, 56, 3);
+    padding: 10px;
+}
+.div4{
+    background: rgb(1, 155, 1);
+    padding: 10px;
+}
+
+.div5{
+    background: rgb(201, 42, 185);
+    padding: 10px;
+}
+.middle{
+    justify-content: space-around;
+    border: 2px solid rgb(0, 0, 0);
+}
