@@ -112,3 +112,21 @@ $message = $result['message'] ?? '';
                 <p>Digital skills to access and build computer confidence</p>
             </div>
             <div class="div3">
+                <h2>ICDL</h2>
+                <h4>DIGITAL CITIZENS</h4>
+                <p>Digital skills to access and build computer confidence</p>
+            </div>
+            <div class="div4">
+                <h2>ICDL</h2>
+                <h4>DIGITAL CITIZENS</h4>
+                <p>Digital skills to access and build computer confidence</p>
+            </div>
+            <div class="div5">
+                <h2>ICDL</h2>
+                <h4>DIGITAL CITIZENS</h4>
+                <p>Digital skills to access and build computer confidence</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
