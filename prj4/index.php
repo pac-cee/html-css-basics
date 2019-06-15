@@ -55,3 +55,22 @@ $message = $result['message'] ?? '';
                 <a href="">EMPLOYERS</a>
                 <a href="">PARTNERSHIPS</a>
                 <a href="">TEST CENTERS</a>
+            </nav>
+        </div>
+    <main>
+        <div>
+            <img src="icdl.jpg" id="main-img" alt="ICDL Main" >
+        </div>
+        <div class="middle">
+            <div class="form">
+                <h3>EMPLOYER PENSION MANAGEMENT SYSTEM</h3>
+                
+                <?php if(!empty($message)): ?>
+                    <div class="message <?php echo strpos($message, 'successfully') !== false ? 'success' : 'error'; ?>">
+                        <?php echo htmlspecialchars($message); ?>
+                    </div>
+                <?php endif; ?>
+                
+                <form method="post" action="">
+                    <pre>           
+      EMPLOY NAME: <input type="text" name="employ_name" value="<?php echo htmlspecialchars($employName); ?>" required>
