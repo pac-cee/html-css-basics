@@ -17,3 +17,22 @@ class PensionCalculator {
     }
 
     public function save($data) {
+        $stmt = $this->conn->prepare("INSERT INTO pension_records (employ_name, employee_address, monthly_salary, employee_period, benefit_percentage, total_amount, amount_per_month) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssdiddd", 
+            $data['employ_name'], 
+            $data['employee_address'], 
+            $data['monthly_salary'], 
+            $data['employee_period'], 
+            $data['benefit_percentage'], 
+            $data['total_amount'], 
+            $data['amount_per_month']
+        );
+        
+        $result = $stmt->execute();
+        $stmt->close();
+        return $result;
+    }
+
+    public function retrieve($employName) {
+        $stmt = $this->conn->prepare("SELECT * FROM pension_records WHERE employ_name LIKE ?");
+        $searchParam = "%$employName%";
