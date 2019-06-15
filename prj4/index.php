@@ -93,3 +93,22 @@ $message = $result['message'] ?? '';
                     </div>
                 </form>
             </div>
+        </div>
+        <div>
+            <img src="group.jpg" id="main-img" alt="Group Image">
+        </div>
+    </main>
+    <footer>
+        <h2 style="text-align: center; padding: 3px;">ICDL PROGRAMMERS</h2>
+        <div class="footer-div">
+            <div class="div1">
+                <h2>ICDL</h2>
+                <h4>DIGITAL CITIZENS</h4>
+                <p>Digital skills to access and build computer confidence</p>
+            </div>
+            <div class="div2">
+                <h2>ICDL</h2>
+                <h4>DIGITAL CITIZENS</h4>
+                <p>Digital skills to access and build computer confidence</p>
+            </div>
+            <div class="div3">
