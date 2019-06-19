@@ -93,3 +93,20 @@ if(!isset($_SESSION['username'])) {
         }
     </style>
 </head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Home Page</h1>
+        <p>Hello, <strong><?php echo htmlspecialchars($_SESSION['first_name']); ?></strong>! Here are your credentials:</p>
+        <ul>
+            <li><label>First Name:</label> <?php echo htmlspecialchars($_SESSION['first_name'] ?? ''); ?></li>
+            <li><label>Last Name:</label> <?php echo htmlspecialchars($_SESSION['last_name'] ?? ''); ?></li>
+            <li><label>Phone:</label> <?php echo htmlspecialchars($_SESSION['phone'] ?? ''); ?></li>
+            <li><label>Address:</label> <?php echo htmlspecialchars($_SESSION['address'] ?? ''); ?></li>
+            <li><label>Username:</label> <?php echo htmlspecialchars($_SESSION['username'] ?? ''); ?></li>
+        </ul>
+        <div class="logout">
+            <a href="logout.php">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
