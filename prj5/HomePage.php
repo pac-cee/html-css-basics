@@ -36,3 +36,22 @@ if(!isset($_SESSION['username'])) {
             color: #3b82f6;
             font-size: 2.2rem;
             margin-bottom: 8px;
+        }
+        .welcome {
+            color: #222;
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+        .credentials {
+            background: #f6f8fa;
+            border-radius: 10px;
+            padding: 18px 0 10px 0;
+            margin-bottom: 18px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+        }
+        .credentials ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .credentials li {
