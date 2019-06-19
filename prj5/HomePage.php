@@ -55,3 +55,22 @@ if(!isset($_SESSION['username'])) {
             margin: 0;
         }
         .credentials li {
+            padding: 7px 0;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 1rem;
+        }
+        .credentials li:last-child {
+            border-bottom: none;
+        }
+        label {
+            font-weight: 700;
+            color: #374151;
+            margin-right: 8px;
+        }
+        .logout {
+            margin-top: 16px;
+        }
+        .logout a {
+            background: linear-gradient(90deg, #f43f5e, #f59e42);
+            color: #fff;
+            padding: 10px 32px;
