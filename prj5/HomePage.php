@@ -74,3 +74,22 @@ if(!isset($_SESSION['username'])) {
             background: linear-gradient(90deg, #f43f5e, #f59e42);
             color: #fff;
             padding: 10px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(244,63,94,0.08);
+            transition: background 0.2s;
+        }
+        .logout a:hover {
+            background: linear-gradient(90deg, #f43f5e, #f59e42 80%);
+            opacity: 0.92;
+        }
+        @media (max-width: 480px) {
+            .container { padding: 18px 4vw 14px 4vw; }
+            h1 { font-size: 1.3rem; }
+            .credentials li { font-size: 0.98rem; }
+        }
+    </style>
+</head>
