@@ -17,3 +17,22 @@ if(isset($_POST['submit'])) {
     
     // Validate the input
     // Enhanced validation
+    if(empty($first_name) || empty($last_name) || empty($address) || empty($telephone) || empty($username) || empty($password)) {
+        echo "<p style='color:red;'>All fields are required.</p>";
+    } elseif(!preg_match("/^[a-zA-Z-' ]*$/", $first_name)) {
+        echo "<p style='color:red;'>First Name: Only letters, hyphens, apostrophes, and spaces allowed.</p>";
+    } elseif(!preg_match("/^[a-zA-Z-' ]*$/", $last_name)) {
+        echo "<p style='color:red;'>Last Name: Only letters, hyphens, apostrophes, and spaces allowed.</p>";
+    } elseif(!preg_match("/^[0-9]{7,15}$/", $telephone)) {
+        echo "<p style='color:red;'>telephone: Only numbers allowed (7-15 digits).</p>";
+    } elseif(!filter_var($username, FILTER_VALIDATE_EMAIL)) {
+        echo "<p style='color:red;'>Username must be a valid email address.</p>";
+    } elseif(strlen($password) < 8 || !preg_match("/[A-Z]/", $password) || !preg_match("/[a-z]/", $password) || !preg_match("/[0-9]/", $password) || !preg_match("/[^a-zA-Z0-9]/", $password)) {
+        echo "<p style='color:red;'>Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.</p>";
+    } else {
+        // First check if username already exists
+        $check_username = "SELECT * FROM Credentials WHERE username = ?";
+        $check_stmt = mysqli_stmt_init($conn);
+        
+        if(!$check_stmt) {
+            echo "<p style='color:red;'>Failed to initialize statement: " . mysqli_error($conn) . "</p>";
