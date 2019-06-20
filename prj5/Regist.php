@@ -36,3 +36,22 @@ if(isset($_POST['submit'])) {
         
         if(!$check_stmt) {
             echo "<p style='color:red;'>Failed to initialize statement: " . mysqli_error($conn) . "</p>";
+        } else {
+            mysqli_stmt_prepare($check_stmt, $check_username);
+            mysqli_stmt_bind_param($check_stmt, "s", $username);
+            mysqli_stmt_execute($check_stmt);
+            mysqli_stmt_store_result($check_stmt);
+            
+            if(mysqli_stmt_num_rows($check_stmt) > 0) {
+                echo "<div class='alert alert-danger' style='color:red; font-weight:bold; padding:10px; background-color:#f8d7da; border:1px solid red;'>Username already exists. Please choose a different username.</div>";
+            } else {
+                // Now attempt to insert the data
+                $sql = "INSERT INTO Credentials (first_name, last_name, address, telephone, username, password) VALUES (?, ?, ?, ?, ?, ?)";
+                $stmt = mysqli_stmt_init($conn);
+                
+                if(!$stmt) {
+                    echo "<p style='color:red;'>Failed to initialize statement: " . mysqli_error($conn) . "</p>";
+                } else {
+                    $preparestmt = mysqli_stmt_prepare($stmt, $sql);
+                    
+                    if($preparestmt) {
