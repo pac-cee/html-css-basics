@@ -150,3 +150,27 @@ if(isset($_POST['submit'])) {
                     } else {
                         echo "<p style='color:red;'>password verification failed.</p>";
                         
+                        // Check if hash is actually bcrypt
+                        if (strpos($row['password'], '$2y$') !== 0) {
+                            echo "<p style='color:red;'>WARNING: password hash in database is not in bcrypt format!</p>";
+                        }
+                    }
+                }
+            } else {
+                echo "<p style='color:red;'>Username not found.</p>";
+            }
+
+            mysqli_stmt_close($stmt);
+        } else {
+            echo "<p style='color:red;'>Prepare failed: " . mysqli_error($conn) . "</p>";
+        }
+    }
+
+    mysqli_close($conn);
+}
+
+
+if (isset($_POST['cancle'])) {
+
+}
+?>
