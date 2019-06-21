@@ -131,3 +131,22 @@ if(isset($_POST['submit'])) {
                     $hash_preview = substr($row['password'], 0, 10) . "...";
                     echo "<p>password hash in database (start): " . $hash_preview . "</p>";
                     
+                    // Verify password
+                    if (password_verify($password, $row['password'])) {
+                        echo "<div class='alert alert-success' style='color:green;'>Login successful!</div>";
+                        
+                        // Start session and redirect
+                        session_start();
+                        $_SESSION['id'] = $row['id']; 
+                        $_SESSION['first_name'] = $row['first_name'];
+                        $_SESSION['last_name'] = $row['last_name'];
+                        $_SESSION['phone'] = $row['telephone'];
+                        $_SESSION['address'] = $row['address'];
+                        $_SESSION['username'] = $row['username'];
+                        
+                        // Redirect to home page
+                        header("Location: HomePage.php");
+                        exit();
+                    } else {
+                        echo "<p style='color:red;'>password verification failed.</p>";
+                        
