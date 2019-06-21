@@ -112,3 +112,22 @@ if(isset($_POST['submit'])) {
 
     if (!$stmt) {
         echo "<p style='color:red;'>Failed to initialize statement: " . mysqli_error($conn) . "</p>";
+    } else {
+        if (mysqli_stmt_prepare($stmt, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $username);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            if ($row = mysqli_fetch_assoc($result)) {
+                echo "<p>User found! Checking password...</p>";
+                echo "<p>Database columns available: " . implode(", ", array_keys($row)) . "</p>";
+                
+                // Check if password column exists
+                if (!isset($row['password'])) {
+                    echo "<p style='color:red;'>ERROR: No 'password' column found in database result!</p>";
+                    echo "<p>Available columns: " . implode(", ", array_keys($row)) . "</p>";
+                } else {
+                    // Show just first few characters of the hash (for security)
+                    $hash_preview = substr($row['password'], 0, 10) . "...";
+                    echo "<p>password hash in database (start): " . $hash_preview . "</p>";
+                    
