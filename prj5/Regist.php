@@ -74,3 +74,22 @@ if(isset($_POST['submit'])) {
             
             mysqli_stmt_close($check_stmt);
         }
+        
+        mysqli_close($conn);
+    }
+}else if (isset($_POST['Login'])) {
+    // Print raw POST data for debugging
+    echo "<p>Login attempt - POST data received:</p>";
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
+    
+    // Trim whitespace from inputs
+    $username = isset($_POST['username']) ? trim($_POST['username']) : '';
+    $password = isset($_POST['password']) ? trim($_POST['password']) : '';
+    
+    echo "<p>Attempting login with username: <strong>" . htmlspecialchars($username) . "</strong></p>";
+    
+    if (empty($username) || empty($password)) {
+        echo "<p style='color:red;'>All fields are required.</p>";
+        return;
