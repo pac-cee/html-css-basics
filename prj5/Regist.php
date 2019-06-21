@@ -55,3 +55,22 @@ if(isset($_POST['submit'])) {
                     $preparestmt = mysqli_stmt_prepare($stmt, $sql);
                     
                     if($preparestmt) {
+                        mysqli_stmt_bind_param($stmt, "ssssss", $first_name, $last_name, $address, $telephone, $username, $hash_password);
+                        
+                        if(mysqli_stmt_execute($stmt)) {
+                            echo "<div class='alert alert-success' style='color:green; font-weight:bold; padding:15px; background-color:#e7f3e7; border:1px solid green; margin:20px auto; text-align:center; max-width:400px; border-radius:5px;'>
+                                    Successfully registered! You are good to go.
+                                  </div>";
+                        } else {
+                            echo "<p style='color:red;'>Registration failed: " . mysqli_stmt_error($stmt) . "</p>";
+                        }
+                        
+                        mysqli_stmt_close($stmt);
+                    } else {
+                        echo "<p style='color:red;'>Prepare failed: " . mysqli_error($conn) . "</p>";
+                    }
+                }
+            }
+            
+            mysqli_stmt_close($check_stmt);
+        }
