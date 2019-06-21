@@ -93,3 +93,22 @@ if(isset($_POST['submit'])) {
     if (empty($username) || empty($password)) {
         echo "<p style='color:red;'>All fields are required.</p>";
         return;
+    }
+
+    // Debug: Check if user exists with this username
+    $debug_sql = "SELECT username FROM Credentials WHERE username = ?";
+    $debug_stmt = mysqli_stmt_init($conn);
+    if (mysqli_stmt_prepare($debug_stmt, $debug_sql)) {
+        mysqli_stmt_bind_param($debug_stmt, "s", $username);
+        mysqli_stmt_execute($debug_stmt);
+        mysqli_stmt_store_result($debug_stmt);
+        echo "<p>Users found with this username: " . mysqli_stmt_num_rows($debug_stmt) . "</p>";
+        mysqli_stmt_close($debug_stmt);
+    }
+
+    // SQL to select user by username
+    $sql = "SELECT * FROM Credentials WHERE username = ?";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!$stmt) {
+        echo "<p style='color:red;'>Failed to initialize statement: " . mysqli_error($conn) . "</p>";
