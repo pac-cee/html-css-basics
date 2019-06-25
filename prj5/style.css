@@ -17,3 +17,22 @@ section{
     /* width: 100%; */
     background: blanchedalmond;
     border: 8px solid rgb(239, 180, 17);
+    border-radius: 12px;
+    background-image: url("login.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.login{
+    font-size: large;
+    /* border: 5px rgb(150, 114, 250) solid ; */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 14px;
+
+
+}
+.login-heading{
+align-self: center;
+border-bottom:2px solid grey;
+width: 100%;
