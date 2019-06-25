@@ -1,0 +1,19 @@
+.forms{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 90dvh;
+    /* margin: auto; */
+    margin-top: 1em;
+    gap: 5px;
+    border-top: 12px  solid rgb(72, 68, 68);
+    border-left: 12px  solid rgb(72, 68, 68);
+    border-bottom: 12px  solid rgb(43, 25, 25);
+    border-right: 12px  solid rgb(43, 25, 25);
+
+
+
+}
+section{
+    /* width: 100%; */
+    background: blanchedalmond;
+    border: 8px solid rgb(239, 180, 17);
