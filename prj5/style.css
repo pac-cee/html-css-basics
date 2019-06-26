@@ -74,3 +74,15 @@ main{
     /* background: #000; */
     justify-self: end;
 }
+
+input{
+ font-size: large;   
+}
+
+
+form{
+    border: 4px gainsboro solid;
+    margin: 5px;
+    width: 97%;
+
+}
