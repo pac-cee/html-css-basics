@@ -55,3 +55,22 @@ width: 100%;
 
 label{
     font-size:  large;
+}
+.login-lable{
+    font-size: xxx-large;
+}
+
+main{
+    /* border: 6px solid rgb(87, 153, 122); */
+    width: 100%;
+    justify-self: end;
+    /* padding-top: 15px; */
+
+    /* align-self: unset; */
+    /* padding-left: 4px; */
+}
+
+.login-form{
+    /* background: #000; */
+    justify-self: end;
+}
