@@ -17,3 +17,22 @@
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigation Styling */
+.nav-table {
+    background-color: #ffe4c4;
+    border-collapse: collapse;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-table td {
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.nav-table td:not(:first-child) {
+    cursor: pointer;
