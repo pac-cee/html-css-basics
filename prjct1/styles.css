@@ -36,3 +36,22 @@ body {
 
 .nav-table td:not(:first-child) {
     cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-table td:not(:first-child):hover {
+    color: var(--primary-color);
+}
+
+.nav-table img {
+    width: 60px;
+    height: 50px;
+}
+
+/* Banner Image */
+.banner-table {
+    margin-top: var(--header-height);
+    width: 100%;
+}
+
+.banner-table img {
