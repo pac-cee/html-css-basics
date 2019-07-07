@@ -131,3 +131,22 @@ body {
 .container p {
     font-size: 12px;
     margin: 0;
+}
+
+/* Form Section */
+.form-section {
+    background-color: #adff2f;
+    border-radius: 8px;
+    padding: 25px;
+    padding: 15px;
+}
+
+.form-section h5 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-align: center;
+    margin: 0 0 15px 0;
+    font-size: 14px;
+}
+
+.form {
