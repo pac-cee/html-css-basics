@@ -1,0 +1,19 @@
+/* Reset and basic settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100vh;
+    background-image: url('backgroungImage.jpeg');
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+    width: 100%;
