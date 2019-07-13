@@ -17,3 +17,22 @@ body {
 /* Container */
 .container {
     width: 100%;
+    margin: 0 auto;
+}
+
+/* Header and Navigation */
+.site-header {
+    background-color: #000000;
+    color: #fff;
+}
+
+.main-nav .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.main-nav .nav-item a {
+    color: #fff;
+    text-decoration: none;
