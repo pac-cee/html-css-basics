@@ -36,3 +36,22 @@ body {
 .main-nav .nav-item a {
     color: #fff;
     text-decoration: none;
+    font-size: 16px;
+}
+
+/* Banner Section */
+.banner-section {
+    border: 1px solid #000;
+
+}
+.banner-img {
+    width: 100%;
+    height: 20%; /* as per original height */
+    display: block;
+}
+
+
+/* Main Content Area */
+.content {
+    border: 1px solid #000;
+}
