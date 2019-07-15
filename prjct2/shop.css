@@ -55,3 +55,22 @@ body {
 .content {
     border: 1px solid #000;
 }
+
+/* Product Container Layout */
+.product-container {
+    display: flex;
+    border-bottom: 1px solid #000;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 230px;  /* matching original width */
+    height:100%;
+    border-right: 1px solid #000;
+}
+
+.sidebar-img {
+    width: 100%;
+    height: 85%;
+    padding-top: 50px;
+    padding-right: 50px;
