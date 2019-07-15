@@ -93,3 +93,22 @@ body {
 .product-item {
     width: 15%;
     text-align: center;
+    padding-right: 10px;
+    border-right: 1px solid #000;
+}
+
+.product-title {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.product-image {
+    width: 75px;
+    height: 37%;
+    margin-top: 5px;
+}
+
+.product-info {
+    padding: 10px;
