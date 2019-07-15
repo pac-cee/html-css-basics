@@ -112,3 +112,22 @@ body {
 
 .product-info {
     padding: 10px;
+}
+
+.product-info h3,
+.product-info h4 {
+    margin-bottom: 5px;
+}
+
+.product-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Registration Form */
+.registration-form {
+    margin-top: 10px;
+}
+
+.registration-form .form-group {
+    margin-bottom: 10px;
