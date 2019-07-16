@@ -169,3 +169,22 @@ body {
     margin-bottom: 10px;
     text-align: center;
 }
+
+.social-links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.social-item {
+    text-align: center;
+    background-color: aliceblue;
+    padding: 5px;
+    width: 23%;
+}
+
+.social-icon {
+    height: 40%;
+    width: 35px;
+}
+
+.social-link {
