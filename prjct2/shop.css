@@ -207,3 +207,22 @@ table {
 td {
     border: 1px solid black;
     padding: 5px;
+    font-size: 15px;
+}
+
+/* New banner styles */
+#banner {
+    background-color: black;
+    height: 7%;
+}
+
+#banner td {
+    color: white;
+}
+
+/* New main content styles */
+#this {
+    background-color: aliceblue;
+}
+
+/* Form Styling */
