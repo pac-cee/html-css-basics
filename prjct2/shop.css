@@ -188,3 +188,22 @@ body {
 }
 
 .social-link {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* New table-based layout styles */
+.table-container {
+    width: 100%;
+    border: 2px solid black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
