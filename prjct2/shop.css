@@ -245,3 +245,22 @@ input[type="button"] {
 /* Table Styles */
 table {
     width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 15px;
+}
+
+/* Header and Navigation */
+header nav table {
+    background-color: black;
+}
+
+#banner td {
+    text-align: center;
+}
+
+#banner a {
