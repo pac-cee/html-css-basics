@@ -264,3 +264,22 @@ header nav table {
 }
 
 #banner a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Banner Section */
+.banner-section table {
+    height: 49px;
+}
+
+.banner-section img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Main Content */
+main > table {
+    height: 80%;
+}
