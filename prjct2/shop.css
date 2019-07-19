@@ -283,3 +283,22 @@ header nav table {
 main > table {
     height: 80%;
 }
+
+/* Sidebar */
+aside img {
+    width: 100%;
+    height: 80%;
+}
+
+/* Product Sections */
+.products table {
+    height: 250px;
+}
+
+.product {
+    text-align: center;
+}
+
+.product header h3 {
+    background-color: black;
+    color: white;
