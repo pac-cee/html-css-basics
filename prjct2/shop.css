@@ -378,3 +378,23 @@ input[type="email"] {
 .social-link {
     text-align: center;
 }
+
+.social-link h4 {
+    margin-bottom: 5px;
+}
+
+.social-link figure {
+    margin: 5px 0;
+}
+
+.social-link a {
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Content Background */
+#this {
+    background-color: aliceblue;
+}
+  
