@@ -359,3 +359,22 @@ input[type="email"] {
 
 .form-actions input {
     margin-right: 10px;
+    padding: 2px 15px;
+    background: #ddd;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+/* Contact Section */
+.contact table:first-child {
+    margin-top: 10px;
+}
+
+#ke {
+    background-color: #000033;
+    text-align: center;
+}
+
+.social-link {
+    text-align: center;
+}
