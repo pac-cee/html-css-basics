@@ -340,3 +340,22 @@ form fieldset {
     border: none;
 }
 
+form pre {
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"] {
+    margin-left: 5px;
+    padding: 2px;
+}
+
+.form-actions {
+    margin-top: 10px;
+}
+
+.form-actions input {
+    margin-right: 10px;
