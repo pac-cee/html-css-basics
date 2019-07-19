@@ -17,3 +17,13 @@ td {
     padding: 5px;
     font-size: 15px; /* Smaller text */
 }
+#this{
+    background-color: aliceblue;
+}
+#ke{
+    text-align: center;
+}
+#banner{
+    background-color: black;
+    border-top-color:white ;
+}
