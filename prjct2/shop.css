@@ -321,3 +321,22 @@ aside img {
 .other-products {
     margin-top: 15px;
 }
+
+.other-products ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Registration Form */
+.registration {
+    padding: 10px;
+}
+
+.registration h4 {
+    margin-bottom: 15px;
+}
+
+form fieldset {
+    border: none;
+}
+
