@@ -74,3 +74,22 @@ p {
 }
 
 /* Hero section styling */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--info-color) 100%);
+    padding: 100px 0;
+    margin-bottom: 2rem;
+}
+
+/* Card hover effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Custom button styles */
+.btn-primary {
+    background: linear-gradient(to right, var(--primary-color), var(--info-color));
+    border: none;
