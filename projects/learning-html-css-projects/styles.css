@@ -93,3 +93,22 @@ p {
 .btn-primary {
     background: linear-gradient(to right, var(--primary-color), var(--info-color));
     border: none;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, var(--info-color), var(--primary-color));
+}
+
+/* Social media icons */
+.social-icons a {
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--info-color) !important;
+}
+
+/* Custom form styling */
+.form-control {
