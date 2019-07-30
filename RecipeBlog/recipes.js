@@ -17,3 +17,22 @@ function renderRecipes() {
 
 function addRecipe(title, ingredients, instructions) {
     recipes.push({title, ingredients, instructions});
+    renderRecipes();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderRecipes();
+    const form = document.getElementById('submitRecipeForm');
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            addRecipe(
+                form.title.value,
+                form.ingredients.value,
+                form.instructions.value
+            );
+            document.getElementById('submitResult').innerText = 'Recipe submitted!';
+            form.reset();
+        });
+    }
+});
