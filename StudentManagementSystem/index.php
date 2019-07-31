@@ -36,3 +36,22 @@ require_once __DIR__ . '/config/db.php';
             </div>
             <div class="hero-img">
                 <img src="https://cdn.pixabay.com/photo/2017/01/31/13/14/graduation-2022442_1280.png" alt="Student Illustration" style="border-radius:12px;box-shadow:0 4px 24px #43b58122;">
+            </div>
+        </section>
+        <section>
+            <h2 style="color:var(--primary);font-size:1.4em;margin-bottom:0.7em;">Why Use Our System?</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>Student Management</h3>
+                    <p>Keep all student information organized and accessible.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Course Tracking</h3>
+                    <p>Manage courses, enrollments, and assignments easily.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Performance Insights</h3>
+                    <p>Monitor grades and academic progress at a glance.</p>
