@@ -36,3 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="post">
             <label>Name:<input type="text" name="name" required></label><br>
             <label>Email:<input type="email" name="email" required></label><br>
+            <label>Course:<input type="text" name="course" required></label><br>
+            <button type="submit">Add Student</button>
+        </form>
+    </main>
+</body>
+</html>
