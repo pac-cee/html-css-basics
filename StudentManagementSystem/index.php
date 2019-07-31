@@ -17,3 +17,22 @@ require_once __DIR__ . '/config/db.php';
 </head>
 <body>
     <nav>
+        <a href="index.php" class="active"><i class="fas fa-house"></i> Home</a>
+        <a href="add_student.php"><i class="fas fa-user-plus"></i> Add Student</a>
+        <a href="view_students.php"><i class="fas fa-users"></i> View Students</a>
+    </nav>
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Welcome to the Student Management System</h1>
+                <p style="font-size:1.2em;">Easily manage students, courses, and grades in one place. Our platform is designed for administrators, teachers, and staff to streamline student data, track academic progress, and improve efficiency.</p>
+                <ul style="margin:1em 0 1.5em 1em; padding:0; list-style:none;">
+                    <li style="margin-bottom:0.7em;"><i class="fas fa-check-circle" style="color:var(--primary);"></i> Add, edit, and view student records</li>
+                    <li style="margin-bottom:0.7em;"><i class="fas fa-check-circle" style="color:var(--primary);"></i> Manage courses and enrollments</li>
+                    <li style="margin-bottom:0.7em;"><i class="fas fa-check-circle" style="color:var(--primary);"></i> Track grades and performance</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--primary);"></i> Fast, secure, and user-friendly</li>
+                </ul>
+                <a href="add_student.php" style="background:var(--primary);color:#fff;padding:0.8em 2em;border-radius:8px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px #43b58122;transition:background 0.3s;">Add Student <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-img">
+                <img src="https://cdn.pixabay.com/photo/2017/01/31/13/14/graduation-2022442_1280.png" alt="Student Illustration" style="border-radius:12px;box-shadow:0 4px 24px #43b58122;">
