@@ -55,3 +55,14 @@ require_once __DIR__ . '/config/db.php';
                     <i class="fas fa-chart-line"></i>
                     <h3>Performance Insights</h3>
                     <p>Monitor grades and academic progress at a glance.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure & Reliable</h3>
+                    <p>Your data is protected with modern security standards.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
