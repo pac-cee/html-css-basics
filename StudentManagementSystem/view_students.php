@@ -17,3 +17,20 @@ $result = $conn->query("SELECT * FROM students");
         <a href="index.php">Home</a>
         <a href="add_student.php">Add Student</a>
         <a href="view_students.php">View Students</a>
+    </nav>
+    <main>
+        <h1>All Students</h1>
+        <table border="1">
+            <tr><th>ID</th><th>Name</th><th>Email</th><th>Course</th></tr>
+            <?php while($row = $result->fetch_assoc()): ?>
+            <tr>
+                <td><?= htmlspecialchars($row['id']) ?></td>
+                <td><?= htmlspecialchars($row['name']) ?></td>
+                <td><?= htmlspecialchars($row['email']) ?></td>
+                <td><?= htmlspecialchars($row['course']) ?></td>
+            </tr>
+            <?php endwhile; ?>
+        </table>
+    </main>
+</body>
+</html>
