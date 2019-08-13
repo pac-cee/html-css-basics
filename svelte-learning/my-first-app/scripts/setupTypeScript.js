@@ -55,3 +55,22 @@ fs.writeFileSync(appSveltePath, appFile)
 
 // Edit rollup config
 const rollupConfigPath = path.join(projectRoot, "rollup.config.js")
+let rollupConfig = fs.readFileSync(rollupConfigPath, "utf8")
+
+// Edit imports
+rollupConfig = rollupConfig.replace(`'rollup-plugin-css-only';`, `'rollup-plugin-css-only';
+import sveltePreprocess from 'svelte-preprocess';
+import typescript from '@rollup/plugin-typescript';`)
+
+// Replace name of entry point
+rollupConfig = rollupConfig.replace(`'src/main.js'`, `'src/main.ts'`)
+
+// Add preprocessor
+rollupConfig = rollupConfig.replace(
+  'compilerOptions:',
+  'preprocess: sveltePreprocess({ sourceMap: !production }),\n\t\t\tcompilerOptions:'
+);
+
+// Add TypeScript
+rollupConfig = rollupConfig.replace(
+  'commonjs(),',
