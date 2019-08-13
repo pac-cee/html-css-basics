@@ -74,3 +74,22 @@ rollupConfig = rollupConfig.replace(
 // Add TypeScript
 rollupConfig = rollupConfig.replace(
   'commonjs(),',
+  'commonjs(),\n\t\ttypescript({\n\t\t\tsourceMap: !production,\n\t\t\tinlineSources: !production\n\t\t}),'
+);
+fs.writeFileSync(rollupConfigPath, rollupConfig)
+
+// Add svelte.config.js
+const tsconfig = `{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
+}`
+const tsconfigPath =  path.join(projectRoot, "tsconfig.json")
+fs.writeFileSync(tsconfigPath, tsconfig)
+
+// Add TSConfig
+const svelteConfig = `import sveltePreprocess from 'svelte-preprocess';
+
+export default {
+  preprocess: sveltePreprocess()
