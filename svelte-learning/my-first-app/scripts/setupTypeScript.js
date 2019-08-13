@@ -36,3 +36,22 @@ packageJSON.devDependencies = Object.assign(packageJSON.devDependencies, {
 // Add script for checking
 packageJSON.scripts = Object.assign(packageJSON.scripts, {
   "check": "svelte-check"
+})
+
+// Write the package JSON
+fs.writeFileSync(path.join(projectRoot, "package.json"), JSON.stringify(packageJSON, null, "  "))
+
+// mv src/main.js to main.ts - note, we need to edit rollup.config.js for this too
+const beforeMainJSPath = path.join(projectRoot, "src", "main.js")
+const afterMainTSPath = path.join(projectRoot, "src", "main.ts")
+fs.renameSync(beforeMainJSPath, afterMainTSPath)
+
+// Switch the app.svelte file to use TS
+const appSveltePath = path.join(projectRoot, "src", "App.svelte")
+let appFile = fs.readFileSync(appSveltePath, "utf8")
+appFile = appFile.replace("<script>", '<script lang="ts">')
+appFile = appFile.replace("export let name;", 'export let name: string;')
+fs.writeFileSync(appSveltePath, appFile)
+
+// Edit rollup config
+const rollupConfigPath = path.join(projectRoot, "rollup.config.js")
