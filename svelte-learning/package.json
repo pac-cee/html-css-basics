@@ -1,0 +1,19 @@
+{
+  "name": "svelte-learning",
+  "version": "1.0.0",
+  "description": "A collection of Svelte learning projects",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2",
+    "svelte": "^4.2.0",
+    "svelte-learning": "file:"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
