@@ -93,3 +93,22 @@ const svelteConfig = `import sveltePreprocess from 'svelte-preprocess';
 
 export default {
   preprocess: sveltePreprocess()
+};
+`
+const svelteConfigPath =  path.join(projectRoot, "svelte.config.js")
+fs.writeFileSync(svelteConfigPath, svelteConfig)
+
+// Add global.d.ts
+const dtsPath =  path.join(projectRoot, "src", "global.d.ts")
+fs.writeFileSync(dtsPath, `/// <reference types="svelte" />`)
+
+// Delete this script, but not during testing
+if (!argv[2]) {
+  // Remove the script
+  fs.unlinkSync(path.join(__filename))
+
+  // Check for Mac's DS_store file, and if it's the only one left remove it
+  const remainingFiles = fs.readdirSync(path.join(__dirname))
+  if (remainingFiles.length === 1 && remainingFiles[0] === '.DS_store') {
+    fs.unlinkSync(path.join(__dirname, '.DS_store'))
+  }
