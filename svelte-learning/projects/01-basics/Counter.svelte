@@ -36,3 +36,22 @@
 </div>
 
 <style>
+    .counter {
+        max-width: 300px;
+        margin: 2rem auto;
+        padding: 1rem;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .display {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: center;
+    }
