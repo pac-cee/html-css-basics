@@ -55,3 +55,19 @@
         gap: 0.5rem;
         justify-content: center;
     }
+
+    button {
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 4px;
+        background: #4CAF50;
+        color: white;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    button:hover {
+        background: #45a049;
+    }
+</style> 
