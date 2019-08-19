@@ -36,3 +36,22 @@
                     <p><strong>Company:</strong> {user.company.name}</p>
                 </div>
             {/each}
+        </div>
+    {/if}
+</div>
+
+<style>
+    .user-list {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+
+    .loading {
+        text-align: center;
+        padding: 2rem;
+        font-size: 1.2rem;
+        color: #666;
+    }
+
+    .error {
