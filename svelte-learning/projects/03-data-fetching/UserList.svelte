@@ -17,3 +17,22 @@
         }
     }
 
+    onMount(fetchUsers);
+</script>
+
+<div class="user-list">
+    <h2>User List Example</h2>
+
+    {#if loading}
+        <div class="loading">Loading users...</div>
+    {:else if error}
+        <div class="error">Error: {error}</div>
+    {:else}
+        <div class="users">
+            {#each users as user (user.id)}
+                <div class="user-card">
+                    <h3>{user.name}</h3>
+                    <p><strong>Email:</strong> {user.email}</p>
+                    <p><strong>Company:</strong> {user.company.name}</p>
+                </div>
+            {/each}
