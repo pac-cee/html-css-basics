@@ -55,3 +55,22 @@
     }
 
     .error {
+        text-align: center;
+        padding: 1rem;
+        background: #ffebee;
+        color: #c62828;
+        border-radius: 4px;
+    }
+
+    .users {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .user-card {
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background: white;
