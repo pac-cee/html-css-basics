@@ -17,3 +17,22 @@
     function toggleTheme() {
         theme.update(t => t === 'light' ? 'dark' : 'light');
     }
+</script>
+
+<div class="shopping-cart" class:dark={$theme === 'dark'}>
+    <h2>Shopping Cart Example</h2>
+    
+    <button class="theme-toggle" on:click={toggleTheme}>
+        Toggle Theme
+    </button>
+
+    <div class="add-item">
+        <input 
+            type="text" 
+            bind:value={newItem.name} 
+            placeholder="Item name"
+        >
+        <input 
+            type="number" 
+            bind:value={newItem.price} 
+            placeholder="Price"
