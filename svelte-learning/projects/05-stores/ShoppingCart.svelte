@@ -36,3 +36,22 @@
             type="number" 
             bind:value={newItem.price} 
             placeholder="Price"
+            min="0"
+            step="0.01"
+        >
+        <input 
+            type="number" 
+            bind:value={newItem.quantity} 
+            placeholder="Quantity"
+            min="1"
+        >
+        <button on:click={addToCart}>Add to Cart</button>
+    </div>
+
+    <div class="cart-items">
+        {#if $cart.length === 0}
+            <p>Cart is empty</p>
+        {:else}
+            {#each $cart as item, i}
+                <div class="cart-item">
+                    <span>{item.name}</span>
