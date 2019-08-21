@@ -55,3 +55,22 @@
             {#each $cart as item, i}
                 <div class="cart-item">
                     <span>{item.name}</span>
+                    <span>${item.price} × {item.quantity}</span>
+                    <button on:click={() => removeItem(i)}>Remove</button>
+                </div>
+            {/each}
+            <div class="cart-total">
+                Total: ${$cartTotal.toFixed(2)}
+            </div>
+        {/if}
+    </div>
+</div>
+
+<style>
+    .shopping-cart {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
