@@ -74,3 +74,16 @@
         border: 1px solid #ddd;
         border-radius: 8px;
         background: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .user-card h3 {
+        margin: 0 0 0.5rem 0;
+        color: #2196F3;
+    }
+
+    .user-card p {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+</style> 
