@@ -112,3 +112,22 @@
     .cart-items {
         margin-top: 2rem;
     }
+
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .cart-total {
+        margin-top: 1rem;
+        text-align: right;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .dark input {
+        background: #444;
+        color: white;
