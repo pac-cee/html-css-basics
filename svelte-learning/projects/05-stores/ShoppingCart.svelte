@@ -93,3 +93,22 @@
         padding: 0.5rem;
         border: 1px solid #ddd;
         border-radius: 4px;
+    }
+
+    button {
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 4px;
+        background: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+
+    .theme-toggle {
+        background: #2196F3;
+        margin-bottom: 1rem;
+    }
+
+    .cart-items {
+        margin-top: 2rem;
+    }
