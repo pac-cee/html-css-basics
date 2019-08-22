@@ -74,3 +74,22 @@
         border-radius: 8px;
         background: white;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .dark {
+        background: #333;
+        color: white;
+    }
+
+    .add-item {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr auto;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    input {
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
