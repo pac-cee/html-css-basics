@@ -131,3 +131,10 @@
     .dark input {
         background: #444;
         color: white;
+        border-color: #555;
+    }
+
+    .dark .cart-item {
+        border-color: #555;
+    }
+</style> 
