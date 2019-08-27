@@ -55,3 +55,19 @@
             </div>
           </div>
         </div>
+      {/each}
+    </div>
+
+    {/* Chart Section */}
+    <div class="mt-8 bg-white shadow rounded-lg">
+      <div class="p-6">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">
+          Analytics Overview
+        </h3>
+        <div class="mt-4 h-64 bg-gray-50 rounded-lg border border-gray-200 p-4">
+          <p class="text-center text-gray-500">Chart placeholder</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div> 
