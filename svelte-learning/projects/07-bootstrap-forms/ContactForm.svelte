@@ -74,3 +74,22 @@
                 <label for="subject" class="form-label">Subject</label>
                 <input
                   type="text"
+                  class="form-control"
+                  id="subject"
+                  bind:value={formData.subject}
+                  required
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="5"
+                  bind:value={formData.message}
+                  required
+                ></textarea>
+              </div>
+
+              <div class="d-grid">
