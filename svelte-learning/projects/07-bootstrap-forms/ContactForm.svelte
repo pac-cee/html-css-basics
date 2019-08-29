@@ -36,3 +36,22 @@
         <div class="card-body">
           <h2 class="card-title text-center mb-4">Contact Us</h2>
           
+          {#if submitted}
+            <div class="alert alert-success" role="alert">
+              Thank you for your message! We'll get back to you soon.
+            </div>
+          {:else}
+            <form on:submit|preventDefault={handleSubmit}>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  bind:value={formData.name}
+                  required
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Please enter your full name"
+                >
+              </div>
