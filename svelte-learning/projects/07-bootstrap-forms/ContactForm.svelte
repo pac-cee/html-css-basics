@@ -55,3 +55,22 @@
                   title="Please enter your full name"
                 >
               </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  bind:value={formData.email}
+                  required
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Enter your email address"
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="subject" class="form-label">Subject</label>
+                <input
+                  type="text"
