@@ -93,3 +93,22 @@
               </div>
 
               <div class="d-grid">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  disabled={loading}
+                >
+                  {#if loading}
+                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                    Sending...
+                  {:else}
+                    Send Message
+                  {/if}
+                </button>
+              </div>
+            </form>
+          {/if}
+        </div>
+      </div>
+    </div>
+  </div>
