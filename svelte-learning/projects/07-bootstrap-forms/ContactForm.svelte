@@ -112,3 +112,11 @@
       </div>
     </div>
   </div>
+</div>
+
+<style>
+  /* Add any custom styles here */
+  :global(body) {
+    background-color: #f8f9fa;
+  }
+</style> 
