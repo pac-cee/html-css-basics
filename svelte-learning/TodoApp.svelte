@@ -36,3 +36,14 @@
 
 <style>
   .done {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .todo-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem;
+  }
+</style>
