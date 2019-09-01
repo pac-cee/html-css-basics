@@ -17,3 +17,22 @@
           add(newTodo);
           newTodo = '';
         }
+      }}
+    >
+    
+    {#each $todos as todo, i}
+      <div class="todo-item">
+        <input
+          type="checkbox"
+          checked={todo.done}
+          on:change={() => toggle(i)}
+        >
+        <span class:done={todo.done}>{todo.text}</span>
+        <button on:click={() => remove(i)}>×</button>
+      </div>
+    {/each}
+  </div>
+</TodoContext>
+
+<style>
+  .done {
